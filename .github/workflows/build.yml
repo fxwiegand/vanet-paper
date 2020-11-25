@@ -9,6 +9,11 @@ jobs:
     steps:
 
       - uses: actions/checkout@v2
+      
+      - name: Get llncs
+        run: |
+          wget ftp://ftp.springernature.com/cs-proceeding/llncs/llncs2e.zip
+          unzip -o llncs2e.zip
 
       - name: Generate PDF document
         uses: hspaans/latexmk-action@v1.0.8
