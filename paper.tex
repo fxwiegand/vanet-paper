@@ -395,7 +395,12 @@ Kommunikationsprotokolle sollten sich im bestmöglichen Fall an den jeweils vorl
 Protokolle welche für den allgemeineren Fall (2D) entwickelt wurden, können auch für eindimensionale Straßentypen angewendet werden.
 Anders herum ist dies nicht ohne weiteres möglich.
 
-\subsection{Kenntniss über benachbarte Fahrzeuge}
+\subsection{Benachbarte Fahrzeuge}
+Kommunikationsprotokolle lassen sich in hinsichtlich der erforderlichen Kenntnis über benachbarte Fahrzeuge unterteilen.
+Hierbei kommen manche Protokolle ohne Kentnisse über andere Fahrzeuge in der Nähe aus (\textit{without neighbor knowledge} oder \textit{NN}).
+Im anderen Fall werden periodisch unter allen benachbarten Fahrzeugen Informationen wie Position oder Geschwindigkeit ausgetauscht.
+Diese so genannte \textit{neighbor positional knowledge (NP)} wird mittels DSRC (\textit{engl. Dedicated Short-Range Communication}) ausgetauscht.
+Bei DSRC handelt es sich um ein MAC-Protokoll (\textit{engl. Medium Access Control}) arbeitet auf einem Frequenzbereich um 5,9 GHz.
 
 \subsection{Benachrichtigungen}
 
