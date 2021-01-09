@@ -379,104 +379,92 @@
   It is followed by a presentation of hints on \LaTeX{} (\cref{sec:hints}).
   Finally, a conclusion is drawn and outlook on future work is made (\cref{sec:outlook}).
 
-\section{Related Work}
-\label{sec:relatedwork}
+\section{Taxonomie für VANET-Kommunikationsprotokolle}
+\label{sec:taxcommunicationprotocol}
 
-Winery~\cite{Winery} is a graphical \commentontext{modeling}{modeling with one \qq{l}, because of AE} tool.
-The whole idea of TOSCA is explained by \citet{Binz2009}.
+\subsection{Problemstellung}
 
-\section{LaTeX Hints}
-\label{sec:hints}
+\subsection{Straßentypen}
+Infrastrukturen und Straßenformen wie zum Beispiel Landstraßen oder Autobahnen müssen bezüglich der Kommunikation zwischen einzelnen Automobilen unterschieden werden.
+So werden Straßenformen wie die Autobahn welche keine Kreuzungen besitzen als \textit{eindimensional (1D)} bezeichnet.
+Ebenso werden Straßen zwischen zwei Kreuzungen als \textit{eindimensional} eingestuft.
+Neben der grundlegen eindimensionalen Straßenform existiert ein allgemeineres Szenario mit vielen Kreuzungen an denen Autos abbiegen können und oft die befahrene Straße wechseln.
+Solch ein Szenario existiert in vielen Städten und wird als \textit{zweidimensional (2D)} bezeichnet.
+Autobahnauffahrten und Kreisverkehre lassen sich keinen der beiden Szenarios eindeutig zuordnen und befinden sich zwischen diesen.
+Kommunikationsprotokolle sollten sich im bestmöglichen Fall an den jeweils vorliegenden Straßentyp anpassen.
+Protokolle welche für den allgemeineren Fall (2D) entwickelt wurden, können auch für eindimensionale Straßentypen angewendet werden.
+Anders herum ist dies nicht ohne weiteres möglich.
 
-\begin{figure}
-  \centering
-  \includegraphics[width=.8\textwidth]{example-image-golden}
-  \caption{Simple Figure. \cite[based on][]{mwe}}
-  \label{fig:simple}
-\end{figure}
+\subsection{Kenntniss über benachbarte Fahrzeuge}
 
-\begin{table}
-  \caption{Simple Table}
-  \label{tab:simple}
-  \centering
-  \begin{tabular}{ll}
-    \toprule
-    Heading1 & Heading2 \\
-    \midrule
-    One      & Two      \\
-    Thee     & Four     \\
-    \bottomrule
-  \end{tabular}
-\end{table}
+\subsection{Benachrichtigungen}
 
-\begin{lstlisting}[
-  % one can adjust spacing here if required
-  % aboveskip=2.5\baselineskip,
-  % belowskip=-.8\baselineskip,
-  caption={Example Java Listing},
-  label=L1,
-  language=Java,
-  float]
-public class Hello {
-    public static void main (String[] args) {
-        System.out.println("Hello World!");
-    }
-}
-\end{lstlisting}
+\subsection{Starting Forwarder Selection}
 
-\begin{lstlisting}[
-  % one can adjust spacing here if required
-  % aboveskip=2.5\baselineskip,
-  % belowskip=-.8\baselineskip,
-  caption={Example XML Listing},
-  label=L2,
-  language=XML,
-  float]
-<example attr="demo">
-  text content
-</example>
-\end{lstlisting}
+\subsection{Compete to Retransmit}
 
-\Cref{L1,L2} show listings typeset using the \texttt{lstlisting} environment.
+\subsection{Konnektivität}
 
-cref Demonstration: Cref at beginning of sentence, cref in all other cases.
+\subsection{Dringlichkeit von Nachrichten}
 
-\Cref{fig:simple} shows a simple fact, although \cref{fig:simple} could also show something else.
+\subsection{Aufbau einer Nachricht}
 
-\Cref{tab:simple} shows a simple fact, although \cref{tab:simple} could also show something else.
+\section{Zuverlässigkeitsorientierte Geocasting Protokolle}
+\label{sec:reliabiltyorientedgeoprotocolls}
 
-\Cref{sec:intro} shows a simple fact, although \cref{sec:intro} could also show something else.
+\subsection{Reliable and Efficient Broadcasting in VANETs (ackPBSM)}
 
-Brackets work as designed:
-<test>
-One can also input backquotes in verbatim text: \verb|`test`|.
+\subsection{Persistance-Based Protocols}
 
-The symbol for powerset is now correct: $\powerset$ and not a Weierstrass p ($\wp$).
+\section{Zeitkritische Geocasting Protokolle}
+\label{sec:timecriticalgeoprotocolls}
 
-\begin{inparaenum}
-  \item All these items...
-  \item ...appear in one line
-  \item This is enabled by the paralist package.
-\end{inparaenum}
+\subsection{Multihop Vehicular Broadcast (MHVB)}
 
-Please use the \qq{qq command} or the \enquote{enquote command} to quote something.
-``something in quotes'' using plain tex syntax also works.
+\subsection{Emergency Message Dissemination with ACK-Overhearing Based Retransmission (EMDOR)}
 
-You can now write words containing hyphens which are hyphenated (application"=specific) at other places.
-This is enabled by an additional configuration of the babel package.
-In case you write \qq{application-specific}, then the word will only be hyphenated at the dash.
-You can also write applica\allowbreak{}tion-specific, but this is much more effort.
+\subsection{Distributed Fair Power Adjustment Protocol (D-FPAV)}
 
-The words \qq{workflow} and \qq{dwarflike} can be copied from the PDF and pasted to a text file.
+\subsection{Receiver Consensus (ReC)}
 
-Numbers can written plain text (such as 100), by using the siunitx package like that:
-\SI{100}{\km\per\hour},
-or by using plain \LaTeX{} (and math mode):
-$100 \frac{\mathit{km}}{h}$.
+\section{Kleinräumige Routing Protokolle}
+\label{sec:smallscaleprotocols}
 
-\section{Conclusion and Outlook}
-\label{sec:outlook}
-\lipsum[1-2]
+\subsection{DPP und OPERA}
+
+\subsection{Binary-Partition-Assisted Broadcast (BPAB)}
+
+\subsection{Track Detection und Distance Defer Transmission Protocols (TRADE und DDT)}
+
+\subsection{Connection-Based Restricted Forwarding (CBRF)}
+
+\subsection{Distributed Vehicular Broadcast (DV-CAST)}
+
+\subsection{Vehicle Density-Based Emergency Broadcasting (VDEB)}
+
+\subsection{Topology-Assisted Geo-Opportunistic Routing (TO-GO)}
+
+\section{Großräumige Routing Protokolle}
+\label{sec:smallscaleprotocols}
+
+\subsection{Distance-Aware Epidemic Routing (DAER)}
+\subsection{Connectivity-Aware Routing (CAR)}
+
+\subsection{Delay-Bounded Routing in VANETs (D-Greedy)}
+\subsection{Vehicle-Assisted Data Delivery in VANETs (VADD)}
+\subsection{Trajectory-Based Data Forwarding for Light-Traffic in VANETs (TBD)}
+\subsection{Static-Node-Assisted Adaptive Routing Protocol in VANETs (SADV)}
+\subsection{Location- and Delay-Aware Cross-Layer Communication (LD-CROP)}
+\subsection{Geopgraphical Opportunistic Routing (GeoOpps)}
+\subsection{Road-Based Vehicular Traffic Routing (RBVT)}
+\subsection{Improved Greedy Traffic-Aware Routing Protocol (GyTAR)}
+\subsection{Acces-Overlay Routing by Two-Phase Routing Protocol (TOPO)}
+
+\section{Zusammenfassung}
+\label{sec:summary}
+
+\section{Fazit und Ausblick}
+\label{sec:conclusion}
 
 \subsubsection*{Acknowledgments}
 \ldots
