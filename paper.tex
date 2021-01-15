@@ -411,6 +411,12 @@ Bei DSRC handelt es sich um ein MAC-Protokoll (\textit{engl. Medium Access Contr
 \subsection{Compete to Retransmit}
 
 \subsection{Konnektivität}
+Der temporäre Verlust der Verbindung zwischen Fahrzeugen oder RSUs stellt für manche Kommunikationsrotokolle ein Problem dar, da diese auf der Annahme einer ständigen Verbindung aufbauen.
+Sollten Schwierigkeiten bei der Verbindung auftauchen können Durchsatz und Zuverlässigkeit eines solchen Protokolls stark schwanken.
+Für ein Szenario in dem eine ständige Verbindung vorrausgesetzt wird, kommt der Begriff \textit{always connected} (\textit{AC}) zum Einsatz.
+Andere Protokolle betrachten ein anderes Szenario (\textit{intermittent connectivity} (\textit{IC})) in dem es zu temporären Aussetzern bei der Verbindung kommen kann, wodurch diese bei Konnektivitäts-Problemen weniger Einbusen bei der Performance haben.
+Diese Resistenz gegen Verbindungsausfälle kann unter anderem mit dem Zwischenspeichern von Nachrichten erreicht werden.
+
 
 \subsection{Dringlichkeit von Nachrichten}
 Die \textit{Dringlichkeit} beim Versenden einer Nachricht kann voneinander abweichen.
