@@ -427,7 +427,18 @@ Im Gegensatz zu den zeitkritischen Nachrichten stehen die sogenannten \textit{zu
 Hierbei liegt der Fokus darauf, dass alle Fahrzeuge, welche die Nachricht bekommen sollen, diese auch erhalten.
 Ein Beispiel hierfür ist das Erhalten einer Werbung für eine Tankstelle in einem bestimmten Umkreis von dieser.
 
-\subsection{Aufbau einer Nachricht}
+\subsection{Nachrichten}
+Für Weiterleitung von Nachrichten in einem VANET enthalten diese neben dem eigentlichen Informationsgehalt zusätzliche Informationen.
+Algorithmen zur Weiterleitung von jenen Nachrichten treffen unterschiedliche Annahmen welche solcher Informationen enthalten sind.
+Hierbei wird hauptsächlich zwischen zwei Kategorien von Nachrichten unterschieden.
+Eine sogenannte \textit{vollständige Nachricht} (\textit{FM} von engl. \textit{full message}) kann Informationen wie Versender, dessen Geschwindigkeit und Position, so wie den genauen Empfänger enthalten.
+Im Gegensatz dazu stehen Nachrichten, bei denen die Knoten, welche die Nachricht weiterleiten sollen, in der Nachricht enthalten sind.
+Diese Nachrichten werden unter \textit{forwarder attached} (\textit{FA}) zusammengefasst.
+Algorithmen die auf \textit{FA} basieren gelten als \textit{Sender orientiert}, da jeweils der Sender der Nachricht darüber entscheidet, welcher Empfänger-Knoten die Nachricht weiterleitet.
+Aufgrund der fehlenden Kenntnis des Senders über die Nachbar-Knoten der Empfänger, ist der Sender nicht dazu in der Lage die bestmöglichen Entscheidungen darüber treffen welcher Empfänger die Nachricht weiterleiten soll.
+Umgekehrt gelten die auf \textit{FM} basierenden Algorithmen als \textit{Empfänger orientiert} und sind generell deutlich zuverlässiger.
+
+
 
 \section{Zuverlässigkeitsorientierte Geocasting Protokolle}
 \label{sec:reliabiltyorientedgeoprotocolls}
