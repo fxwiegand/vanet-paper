@@ -373,11 +373,26 @@
 \end{keywords}
 
 \section{Einleitung}\label{sec:intro}
-
-  Das hier ist die Einleitung. Irgendwas mit VANETs und so.
-  The remainder of the paper starts with a presentation of related work (\cref{sec:relatedwork}).
-  It is followed by a presentation of hints on \LaTeX{} (\cref{sec:hints}).
-  Finally, a conclusion is drawn and outlook on future work is made (\cref{sec:outlook}).
+Automobile ad-hoc Netze (VANETs) sind ein wichtiger Bestandteil eines zukunftsorientierten intelligenten Transportsystems (ITS). % Satz noch umstellen mit Blick auf 2. Satz
+Bei einem VANET handelt es sich um eine Unterform eines mobilen ad-hoc Netzes welches sich aus einzelnen Fahrzeugen, die als Knoten betrachtet werden, zusammensetzt.
+Allgemeine Ziele eines ITS sind mehr Verkehrssicherheit, ein besserer Verkehrsfluss und eine allgemeine Verbesserung des Fahrerlebnisses durch unterschiedliche Dienste.
+Durch Warnung vor bevorstehenden Kollisionen mit liegen gebliebenen Fahrzeugen oder frühzeitigen Stauwarnungen aufgrund von Vorhersagen durch gesammelte Daten lassen sich mit VANETs diese Zielsetzungen realisieren.
+Die zwar zurückgehenden aber dennoch beachtlichen Zahlen von Verkehrstoten im Jahr 2020\cite{adacVerkehrstote} machen die weiterführende Entwicklung von VANETs äußerst erstrebenswert.
+Ebenso vorteilhaft könnten sich VANETs im Bezug auf anhaltende Probleme mit Stau-Bildung, insbesondere an Wochenenden in den Sommermonaten\cite{adacStaus}, auswirken.
+Aspekte wie das einfachere finden von Parkplätzen oder Restaurants gehören ebenfalls zu den möglichen Vorteilen der Nutzung eines automobile ad-hoc Netzes.
+Letztere Anwendung ist den sogenannten \textit{non-safety applications} eines VANETs zuzuordnen welche hauptsächlich dem Unterhaltungszweck dienen oder die Regelung des Verkehrsflusses zum Ziel haben.
+Die \textit{non-safety applications} (auch \textit{comfort services} oder \textit{general information services}) können Reisezeiten verkürzen, indem der Verkehr intelligent geführt wird und so Staus bereits im Vorfeld vermieden werden.
+Zusätzlich können Verbände bzw. Kolonnen gebildet werden welche unter anderem den Verbrauch eines hinterher fahrenden Automobils durch geringeren Windwiderstand senken können.
+An \textit{general information services}) könnte durch mögliche Werbung oder andere Unterhaltungsdienste ebenfalls ein wirtschaftliches Interesse bestehen.
+Im Gegensatz zu den \textit{non-safety applications} stehen sogenannte \textit{safety applications} welche sich der Sicherheit im Straßenverkehr widmen.
+Da diese unmittelbar vor Unfällen warnen können, ist eine möglichst schnelle Übertragung der Nachrichten hierbei besonders wichtig.
+Um potenzielle Gefahren möglichst schnell zu erkennen werden bei \textit{safety applications} die Umgebung und Faktoren wie die eigene Postion und Geschwindigkeit ständig überwacht.
+Besteht aufgrund der erfassten Daten eine akute Gefahr, wird eine Nachricht an umliegende Fahrzeuge im VANET verteilt, um diese zu warnen.
+\textit{Safety applications} basierend meist auf reiner \textit{V2V}-Kommunikation, also der direkten Kommunikation zwischen zwei Fahrzeugen.
+Gleiches gilt für andere Dienste welche Nachrichten an Fahrzeuge im lokalen Umfeld verbreiten wollen wie zum Beispiel Werbung von einer Tankstelle an Fahrzeuge im Umkreis.
+\textit{V2I}-Kommunikation ist die Kommunikation zwischen einem Fahrzeug und einem sekundären Interface wie einer stationären Einheit am Straßenrand (\textit{RSU} von engl. \textit{roadside unit}) mit Internet-Anbindung oder der direkten Verbindung eines Fahrzeugs via 5G\@.
+\textit{V2I} bietet im Vergleich zu \textit{V2V} diverse Vorteile wie eine höhere Zuverlässigkeit oder garantierte \textit{Quality of Service}.
+Mithilfe der Anbindung an das Internet können oben beschriebene Anwendungen, wie die Verbesserung des Verkehrsflusses durch intelligente Routen-Berechnung, zentralisiert werden.
 
 \section{Taxonomie für VANET-Kommunikationsprotokolle}
 \label{sec:taxcommunicationprotocol}
@@ -524,5 +539,5 @@ See \url{https://help.jabref.org/en/CleanupEntries} for an overview of the clean
 % Enfore empty line after bibliography
 \ \\
 %
-All links were last followed on October 5, 2017.
+Alle Links wurden zuletzt am 20. Januar 2021 abgerufen.
 \end{document}
