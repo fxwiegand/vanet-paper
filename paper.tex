@@ -419,7 +419,18 @@ Im anderen Fall werden periodisch unter allen benachbarten Fahrzeugen Informatio
 Diese so genannte \textit{neighbor positional knowledge (NP)} wird mittels DSRC (\textit{engl. Dedicated Short-Range Communication}) ausgetauscht.
 Bei DSRC handelt es sich um ein MAC-Protokoll (\textit{engl. Medium Access Control}) welches auf einem Frequenzbereich um 5,9 GHz arbeitet.
 
-\subsection{Benachrichtigungen}
+\subsection{Bestätigung empfangener Nachrichten}
+Um sicherzustellen, dass gesendete Nachrichten auch empfangen wurden, können \textit{Acknowledgements} genutzt werden, die den Empfang einer Nachricht bestätigen.
+Eine Form um empfangene Nachrichten zu bestätigen sind die sogenannten \textit{beacon acknowledgements} (\textit{BA}).
+Hierbei werden stetig in einem festen Abstand \textit{beacons} versendet welche bei erfolgreichem Empfang einer Nachricht diesen bestätigen.
+Erhält nun der Sender $S$ ein \textit{beacon} des Empfängers $R$ kann dieser nun eindeutig feststellen welche Nachrichten $R$ bisher empfangen hat.
+Diese Methode der Bestätigung funktionieren ebenfalls per direkter Bestätigung, also ohne \textit{beacons}.
+Bestätigungen können auch von passiver Form sein (\textit{passive acknowledgement} bzw. \textit{PA}).
+Dabei kann der Sender durch den Empfang einer von ihm gesendeten Nachricht, welche somit zwingend weiter verbreitet wurde, Rückschlüsse auf den Empfang dieser ziehen.
+Eine weitere Möglichkeit stellt die \textit{reception estimation} (\textit{RE}) dar.
+Hierbei basieren Schlüsse vom Sender bezüglich dem Empfang einer Nachricht ausschließlich auf der Distanz zwischen ihm und dem Empfänger der Nachricht.
+Manche Protokolle kommen vollkommen ohne \textit{Acknowledgements} aus und werden unter \textit{NA} zusammengefasst.
+
 
 \subsection{Starting Forwarder Selection}
 
