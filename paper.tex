@@ -434,8 +434,25 @@ Eine weitere Möglichkeit stellt die \textit{reception estimation} (\textit{RE})
 Hierbei basieren Schlüsse vom Sender bezüglich dem Empfang einer Nachricht ausschließlich auf der Distanz zwischen ihm und dem Empfänger der Nachricht.
 Manche Protokolle kommen vollkommen ohne \textit{Acknowledgements} aus und werden unter \textit{NA} zusammengefasst.
 
+\subsection{Weiterleitung von Nachrichten}
+Ein Fahrzeug kann sich in zwei verschiedenen Zuständen befinden.
+Im \textit{idle} Zustand senden das Fahrzeug keine Nachrichten.
+Dies kann entweder eintreteten, falls keine Nachrichten empfangen wurden und somit auch keine weitergeleitet werden können, oder aber durch die Information das alle direkten Nachbarn des Fahrzeugs alle empfangenen Nachrichten bereits erhalten haben.
+Befindet sich ein Fahrzeug allerdings im aktiven Zustand (\textit{active}), so können Nachrichten weitergeleitet werden.
+Ebenfalls müssen dann diejenigen Nachbarn ausgewählt werden, welche die Nachricht weiter verbreiten sollen.
+Für die Entscheidung, wann ein Fahrzeug vom \textit{idle} in den \textit{active} Zustand wechselt, gibt es mehrere Möglichkeiten, die sich allerdings gegenseitig nicht ausschließen und in manchen Protokollen miteinander kombiniert werden.
+\subsubsection{\textit{always activate}(\textit{AA})}
+Fahrzeuge wechseln jedes mal, wenn sie eine Nachricht erhalten, in den aktiven Zustand.
+\subsubsection{\textit{immediately activate}(\textit{IA})}
+Fahrzeuge wechseln nur beim ersten Empfangen einer Nachricht in den aktiven Zustand.
+Wird eine Nachricht zum wiederholten Mal empfangen verbleibt das Auto im \textit{idle} Zustand.
+\subsubsection{\textit{lack of acknowledgement}(\textit{LA})}
+Fahrzeuge wechseln in den \textit{active} Zustand, wenn ein \textit{beacon} von einem Nachbarn empfangen wird, in dem die ID einer Nachricht enthalten ist die der Nachbar nicht erhalten hat.
+Dies hat automatisch zur Folge das bei dem Eintreffen eines neuen Nachbarn der Zustand des Fahrzeugs immer aktiv wird.
+\subsubsection{\textit{neighbor elimination}(\textit{NE})}
+Ein Fahrzeug $V$ wechselt in den aktiven Zustand, wenn es eine Nachricht von einem Nachbarn $N$ enthält, der nicht alle Nachbarn von $V$ abdeckt.
+Ein anderes Fahrzeug $L$ gilt genau dann als von $N$ abgedeckt, falls sich dieses in einem festgelegten Umkreis von $L$ befindet.
 
-\subsection{Starting Forwarder Selection}
 
 \subsection{Compete to Retransmit}
 
