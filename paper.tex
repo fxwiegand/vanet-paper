@@ -434,7 +434,7 @@ Eine weitere Möglichkeit stellt die \textit{reception estimation} (\textit{RE})
 Hierbei basieren Schlüsse vom Sender bezüglich dem Empfang einer Nachricht ausschließlich auf der Distanz zwischen ihm und dem Empfänger der Nachricht.
 Manche Protokolle kommen vollkommen ohne \textit{Acknowledgements} aus und werden unter \textit{NA} zusammengefasst.
 
-\subsection{Weiterleitung von Nachrichten}
+\subsection{Start des Prozesses zur Weiterleitung von Nachrichten}\label{subsec:forwarder-selection}
 Ein Fahrzeug kann sich in zwei verschiedenen Zuständen befinden.
 Im \textit{idle} Zustand senden das Fahrzeug keine Nachrichten.
 Dies kann entweder eintreteten, falls keine Nachrichten empfangen wurden und somit auch keine weitergeleitet werden können, oder aber durch die Information das alle direkten Nachbarn des Fahrzeugs alle empfangenen Nachrichten bereits erhalten haben.
@@ -453,8 +453,23 @@ Dies hat automatisch zur Folge das bei dem Eintreffen eines neuen Nachbarn der Z
 Ein Fahrzeug $V$ wechselt in den aktiven Zustand, wenn es eine Nachricht von einem Nachbarn $N$ enthält, der nicht alle Nachbarn von $V$ abdeckt.
 Ein anderes Fahrzeug $L$ gilt genau dann als von $N$ abgedeckt, falls sich dieses in einem festgelegten Umkreis von $L$ befindet.
 
-
-\subsection{Compete to Retransmit}
+\subsection{Übertragung von Nachrichten}
+Hat ein Fahrzeug wie in \ref{subsec:forwarder-selection} beschrieben, den aktiven Zustand eingenommen, kann es – aber muss es nicht zwingend – Nachrichten weiterverbreiten.
+Da die Kommunikation über einem einzigen Kanal läuft, können nicht zwei Knoten gleichzeitig senden, da es sonst zu Kollisionen kommen könnte.
+Bedingt dadurch kommt es im Normalfall zu einer Art Wettbewerb zwischen den Fahrzeugen, bei der der Gewinner die Möglichkeit erhält Nachrichten zu versenden.
+Die \textit{medium acces control (MAC)}, eine Erweiterung der OSI-Modells, ermöglicht es allerdings Fahrzeugen in kurzen zeitlichen Abständen voneinander zu senden, indem andere Fahrzeuge jeweils auf die Ankunft und damit den Abschluss einer Übertragung warten.
+Somit erübrigt sich der Wettbewerb durch die Nutzung der MAC-Schicht, wodurch Protokolle die nur diese Nutzen der Kategorie \textit{NC} bzw. \textit{no competition} angehören.\\
+Bei der Nutzung von \textit{DSRC} werden, angelehnt an IEEE 802.11, Zeitslots genutzt, um Kollisionen möglichst zu vermeiden.
+Ein Fahrzeug kann senden, wenn sich eine festgelegte Anzahl an freien Zeitslots ergibt.
+Dabei kann sich die Wartezeit entweder zufällig ergeben, oder anhand von Prioritäten vergeben werden.
+Da die Wartezeit auch zufalls-basiert sein kannen, lässts ich keine vollständige Kollisions-Freiheit garantieren und wiederholte Sendungen lassen sich nicht vermeiden.
+Broadcasts können durch ihr exponentielles Wachstum (eine Nachricht eines Fahrzeugs wird von mehreren weiterverbreitet) diese Methode hervorragend nutzen.
+Für Nachrichten welche jeweils nur von einem einzelnen Fahrzeug zu einem weiteren übertragen werden sollen existieren bessere Alternativen wie \textit{Ready-to-Send Clear-to-Send} (\textit{RTS-CTS}).
+Dabei wird zwischen Sender und Empfänger ein Kanal reserviert, indem der Sender ein RTS-Paket mit der Belegungs-Dauer für diesen Kanal an den Empfänger sendet, welcher dann zur Bestätigung ein CTS-Paket verschickt.
+Erhält der Sender diese Bestätigung, kann er den Kanal sicher kollisionsfrei für den vorgesehenen Zeitraum nutzen.
+Bei \textit{RTS-CTS} können ausschließlich Kollisionen beim Senden der RTS- bzw. CTS-Pakete vorkommen, welche in diesem Fall mit zufälliger Wartezeit erneut gesendet werden können.
+\textit{Ready-to-Send Clear-to-Send} ist ein Protokoll welches der Kategorie \textit{time delay} (\textit{TD}) angehört.\\
+Mit \textit{black burst} (\textit{BB}) existiert eine weitere Option bei der Knoten die eine Nachricht senden wollen ein Rauschsignal ausgeben und erst dann die Nachricht senden, wenn sie kein Rauschsignal von anderen Knoten empfangen.
 
 \subsection{Konnektivität}
 Der temporäre Verlust der Verbindung zwischen Fahrzeugen oder RSUs stellt für manche Kommunikationsrotokolle ein Problem dar, da diese auf der Annahme einer ständigen Verbindung aufbauen.
