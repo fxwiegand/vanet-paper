@@ -394,7 +394,7 @@ Gleiches gilt für andere Dienste welche Nachrichten an Fahrzeuge im lokalen Umf
 \textit{V2I} bietet im Vergleich zu \textit{V2V} diverse Vorteile wie eine höhere Zuverlässigkeit oder garantierte \textit{Quality of Service}.
 Mithilfe der Anbindung an das Internet können oben beschriebene Anwendungen, wie die Verbesserung des Verkehrsflusses durch intelligente Routen-Berechnung, zentralisiert werden.\\
 Ziel der Ausarbeitung ist es, eine Taxonomie für Kommunikationsprotokolle in VANETs vorzustellen.
-Desweiteren sollen verschiedene bestehende Protokolle vorgestellt werden und im Hinblick auf die Taxonomie eingeordnet und beurteilt werden.
+Des Weiteren sollen verschiedene bestehende Protokolle vorgestellt werden und im Hinblick auf die Taxonomie eingeordnet und beurteilt werden.
 
 
 \section{Taxonomie für VANET-Kommunikationsprotokolle}
@@ -402,7 +402,34 @@ Desweiteren sollen verschiedene bestehende Protokolle vorgestellt werden und im 
 Die Anforderungen an Kommunikationsprotokolle für VANETs variieren enorm und sind stark and unterschiedliche äußerliche Faktoren und Charakteristiken von diesen gebunden.
 Im folgenden soll eine Taxonomie basierend auf diesen Faktoren und Charakteristiken für ein solches Protokoll vorgestellt werden.
 
-\subsection{Problemstellung}
+\subsection{Grundlegende Definitionen}
+Bei sogenannter \textit{multihop communication} müssen Nachrichten bzw. Pakete mehrere Zwischenstationen (\textit{hops}) bis zum Empfänger überwinden.
+Für die Taxonomie wird diese Kommunikation in drei Kategorien unterteilt:
+\begin{itemize}
+  \item \textit{routing (one-to-one)}
+  \item \textit{geocasting (one-to-all)}
+  \item \textit{dissemination (one-to-some)}
+\end{itemize}
+Durch die hohe Mobilität der Fahrzeuge im VANET sowie deren variierenden Verbindungen untereinander machen das \textit{routing} zu einer anspruchsvollen Aufgabe.
+Mit \textit{routing} lassen sich viele Kommunikationsformen umsetzen, darunter neben \textit{V2V} und \textit{V2V} auch \textit{one-way} und \textit{two-way communication}.
+Letzteres erlaubt auch die Kommunikationen zwischen zwei Fahrern oder auch die Reservierung von Parkplätzen.
+Um das Problem zu vereinfachen, lassen sich Annahmen über den Empfänger einer Nachricht treffen.
+Diese Annahmen können beispielsweise bei einem RSU eine genaue geografische Position sein oder die eines sich bewegenden Fahrzeugs welche natürlich basierend auf Fahrtrichtung und Geschwindigkeit des Fahrzeugs aktualisiert werden muss.
+Mit der Nutzung von RSUs als Gateways lässt sich der \textit{routing} Prozess vereinfachen.
+Dabei reduziert sich der \textit{routing} Prozess vom Fahrzeug auf das Weiterleiten der Nachricht zum nächsten RSU\@.
+Dieser leitet die Nachricht an das RSU weiter, welches sich am nächsten zum Empfänger-Fahrzeug befindet, dieser schlussendlich dann an das Fahrzeug.
+Im Weiteren werden RSUs für den \textit{routing} Prozess nicht weiter betrachtet.
+Weiterführend lässt sich das \textit{routing} noch weiter unterteilen im Bezug auf die Distanz, die eine Nachricht überwinden muss.
+Ist die Distanz beziehungsweise die Position des Empfängers unbekannt spricht man von \textit{FD} (von engl. \textit{finding destination}).
+Das Weiterleiten von Nachrichten zwischen zwei Kreuzungen wird unter \textit{small-scale routing (SS)} zusammengefasst.
+Geht das \textit{routing} über eine oder mehrere Kreuzungen hinaus, spricht man hingegen von \textit{large-scale routing (LS)}.\\
+Beim \textit{broadcasting}, \textit{floading}, \textit{geocasting} oder der \textit{data dissemination} geht es darum eine einzelne Nachricht an mehrere weiteren Knoten in einem Netz zu versenden, wobei die einzelnen Bezeichnungen einen etwas spezifischeren Fall meinen.
+Das sogenannte \textit{flooding} konzentriert sich darauf eine einzelne Nachricht immer wieder von allen Empfängern neu zu versenden und damit das Netz zu ``fluten''.
+Im Vergleich zum \textit{broadcasting}, bei dem keine räumlichen Grenzen betrachtet werden, sieht das \textit{geocasting} nur die Verbreitung in einem bestimmten Raum vor.
+Das \textit{geocasting} kann dabei sowohl von einem Fahrzeug als auch von einem RSU ausgehen und will auf jeden Fall alle Fahrzeuge in einem bestimmten Straßenabschnitt oder Bereich erreichen.
+Ein derartiger Bereich kann exemplarisch das Umfeld eines Unfalls sein.
+Dabei ist zu beachten dass der Fokus auf denjenigen Fahrzeugen liegen muss die sich dem Unfall annähern.
+Unter Umständen involviert das \textit{geocasting} auch einen \textit{routing} Prozess zu einem bestimmten Bereich hin, bevor eine Nachricht dann unter allen Fahrzeugen in diesem Bereich verbreitet werden kann.
 
 \subsection{Straßentypen}
 Infrastrukturen und Straßenformen wie zum Beispiel Landstraßen oder Autobahnen müssen bezüglich der Kommunikation zwischen einzelnen Automobilen unterschieden werden.
