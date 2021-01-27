@@ -376,20 +376,20 @@
 Automobile ad-hoc Netze (VANETs) sind ein wichtiger Bestandteil eines zukunftsorientierten intelligenten Transportsystems (ITS). % Satz noch umstellen mit Blick auf 2. Satz
 Bei einem VANET handelt es sich um eine Unterform eines mobilen ad-hoc Netzes welches sich aus einzelnen Fahrzeugen, die als Knoten betrachtet werden, zusammensetzt.
 Allgemeine Ziele eines ITS sind mehr Verkehrssicherheit, ein besserer Verkehrsfluss und eine allgemeine Verbesserung des Fahrerlebnisses durch unterschiedliche Dienste.
-Durch Warnung vor bevorstehenden Kollisionen mit liegen gebliebenen Fahrzeugen oder frühzeitigen Stauwarnungen aufgrund von Vorhersagen durch gesammelte Daten lassen sich mit VANETs diese Zielsetzungen realisieren.
+Durch Warnung vor bevorstehenden Kollisionen mit liegengebliebenen Fahrzeugen oder frühzeitigen Stauwarnungen aufgrund von Vorhersagen durch gesammelte Daten lassen sich mit VANETs diese Zielsetzungen realisieren.
 Die zwar zurückgehenden aber dennoch beachtlichen Zahlen von Verkehrstoten im Jahr 2020\cite{adacVerkehrstote} machen die weiterführende Entwicklung von VANETs äußerst erstrebenswert.
 Ebenso vorteilhaft könnten sich VANETs im Bezug auf anhaltende Probleme mit Stau-Bildung, insbesondere an Wochenenden in den Sommermonaten\cite{adacStaus}, auswirken.
 Aspekte wie das einfachere finden von Parkplätzen oder Restaurants gehören ebenfalls zu den möglichen Vorteilen der Nutzung eines automobile ad-hoc Netzes.
 Letztere Anwendung ist den sogenannten \textit{non-safety applications} eines VANETs zuzuordnen welche hauptsächlich dem Unterhaltungszweck dienen oder die Regelung des Verkehrsflusses zum Ziel haben.
 Die \textit{non-safety applications} (auch \textit{comfort services} oder \textit{general information services}) können Reisezeiten verkürzen, indem der Verkehr intelligent geführt wird und so Staus bereits im Vorfeld vermieden werden.
-Zusätzlich können Verbände bzw. Kolonnen gebildet werden welche unter anderem den Verbrauch eines hinterher fahrenden Automobils durch geringeren Windwiderstand senken können.
-An \textit{general information services}) könnte durch mögliche Werbung oder andere Unterhaltungsdienste ebenfalls ein wirtschaftliches Interesse bestehen.
+Zusätzlich können Verbände bzw. Kolonnen gebildet werden, welche unter anderem den Verbrauch eines hinterher fahrenden Automobils durch geringeren Windwiderstand senken können.
+An \textit{general information services} könnte durch mögliche Werbung oder andere Unterhaltungsdienste ebenfalls ein wirtschaftliches Interesse bestehen.
 Im Gegensatz zu den \textit{non-safety applications} stehen sogenannte \textit{safety applications} welche sich der Sicherheit im Straßenverkehr widmen.
 Da diese unmittelbar vor Unfällen warnen können, ist eine möglichst schnelle Übertragung der Nachrichten hierbei besonders wichtig.
 Um potenzielle Gefahren möglichst schnell zu erkennen werden bei \textit{safety applications} die Umgebung und Faktoren wie die eigene Postion und Geschwindigkeit ständig überwacht.
 Besteht aufgrund der erfassten Daten eine akute Gefahr, wird eine Nachricht an umliegende Fahrzeuge im VANET verteilt, um diese zu warnen.
-\textit{Safety applications} basierend meist auf reiner \textit{V2V}-Kommunikation, also der direkten Kommunikation zwischen zwei Fahrzeugen.
-Gleiches gilt für andere Dienste welche Nachrichten an Fahrzeuge im lokalen Umfeld verbreiten wollen wie zum Beispiel Werbung von einer Tankstelle an Fahrzeuge im Umkreis.
+\textit{Safety applications} basieren meist auf reiner \textit{V2V}-Kommunikation, also der direkten Kommunikation zwischen zwei Fahrzeugen.
+Gleiches gilt für andere Dienste welche Nachrichten an Fahrzeuge im lokalen Umfeld verbreiten wollen, wie zum Beispiel Werbung einer Tankstelle an Fahrzeuge im Umkreis.
 \textit{V2I}-Kommunikation ist die Kommunikation zwischen einem Fahrzeug und einem sekundären Interface wie einer stationären Einheit am Straßenrand (\textit{RSU} von engl. \textit{roadside unit}) mit Internet-Anbindung oder der direkten Verbindung eines Fahrzeugs via 5G\@.
 \textit{V2I} bietet im Vergleich zu \textit{V2V} diverse Vorteile wie eine höhere Zuverlässigkeit oder garantierte \textit{Quality of Service}.
 Mithilfe der Anbindung an das Internet können oben beschriebene Anwendungen, wie die Verbesserung des Verkehrsflusses durch intelligente Routen-Berechnung, zentralisiert werden.\\
@@ -474,14 +474,14 @@ Fahrzeuge wechseln jedes Mal, wenn sie eine Nachricht erhalten in den aktiven Zu
 Fahrzeuge wechseln nur beim ersten Empfangen einer Nachricht in den aktiven Zustand.
 Wird eine Nachricht zum wiederholten Mal empfangen verbleibt das Auto im \textit{idle} Zustand.
 \subsubsection{\textit{lack of acknowledgement (LA)}}
-Fahrzeuge wechseln in den \textit{active} Zustand, wenn ein \textit{beacon} von einem Nachbarn empfangen wird, in dem die ID einer Nachricht enthalten ist die der Nachbar nicht erhalten hat.
-Dies hat automatisch zur Folge das bei dem Eintreffen eines neuen Nachbarn der Zustand des Fahrzeugs immer aktiv wird.
+Fahrzeuge wechseln in den \textit{active} Zustand, wenn ein \textit{beacon} von einem Nachbarn empfangen wird, in dem die ID einer Nachricht enthalten ist, die der Nachbar nicht erhalten hat.
+Dies hat automatisch zur Folge, dass bei dem Eintreffen eines neuen Nachbarn der Zustand des Fahrzeugs immer aktiv wird.
 \subsubsection{\textit{neighbor elimination (NE)}}
 Ein Fahrzeug $V$ wechselt in den aktiven Zustand, wenn es eine Nachricht von einem Nachbarn $N$ enthält, der nicht alle Nachbarn von $V$ abdeckt.
 Ein anderes Fahrzeug $L$ gilt genau dann als von $N$ abgedeckt, falls sich dieses in einem festgelegten Umkreis von $L$ befindet.
 
 \subsection{Übertragung von Nachrichten}
-Hat ein Fahrzeug wie in \ref{subsec:forwarder-selection} beschrieben, den aktiven Zustand eingenommen, kann es – aber muss es nicht zwingend – Nachrichten weiterverbreiten.
+Hat ein Fahrzeug wie in \ref{subsec:forwarder-selection} beschrieben, den aktiven Zustand eingenommen, kann es – muss aber nicht zwingend – Nachrichten weiterverbreiten.
 Da die Kommunikation über einem einzigen Kanal läuft, können nicht zwei Knoten gleichzeitig senden, da es sonst zu Kollisionen kommen könnte.
 Bedingt dadurch kommt es im Normalfall zu einer Art Wettbewerb zwischen den Fahrzeugen, bei der der Gewinner die Möglichkeit erhält Nachrichten zu versenden.
 Die \textit{medium acces control (MAC)}, eine Erweiterung der OSI-Modells, ermöglicht es allerdings Fahrzeugen in kurzen zeitlichen Abständen voneinander zu senden, indem andere Fahrzeuge jeweils auf die Ankunft und damit den Abschluss einer Übertragung warten.
@@ -489,26 +489,26 @@ Somit erübrigt sich der Wettbewerb durch die Nutzung der MAC-Schicht, wodurch P
 Bei der Nutzung von \textit{DSRC} werden, angelehnt an IEEE 802.11, Zeitslots genutzt, um Kollisionen möglichst zu vermeiden.
 Ein Fahrzeug kann senden, wenn sich eine festgelegte Anzahl an freien Zeitslots ergibt.
 Dabei kann sich die Wartezeit entweder zufällig ergeben, oder anhand von Prioritäten vergeben werden.
-Da die Wartezeit auch zufalls-basiert sein kannen, lässts ich keine vollständige Kollisions-Freiheit garantieren und wiederholte Sendungen lassen sich nicht vermeiden.
+Da die Wartezeit auch zufallsbasiert sein kann, lässt sich keine vollständige Kollisionsfreiheit garantieren und wiederholte Sendungen lassen sich nicht vermeiden.
 Broadcasts können durch ihr exponentielles Wachstum (eine Nachricht eines Fahrzeugs wird von mehreren weiterverbreitet) diese Methode hervorragend nutzen.
-Für Nachrichten welche jeweils nur von einem einzelnen Fahrzeug zu einem weiteren übertragen werden sollen existieren bessere Alternativen wie \textit{Ready-to-Send Clear-to-Send} (\textit{RTS-CTS}).
-Dabei wird zwischen Sender und Empfänger ein Kanal reserviert, indem der Sender ein RTS-Paket mit der Belegungs-Dauer für diesen Kanal an den Empfänger sendet, welcher dann zur Bestätigung ein CTS-Paket verschickt.
+Für Nachrichten welche jeweils nur von einem einzelnen Fahrzeug zu einem weiteren übertragen werden sollen, existieren bessere Alternativen wie \textit{Ready-to-Send Clear-to-Send} (\textit{RTS-CTS}).
+Dabei wird zwischen Sender und Empfänger ein Kanal reserviert, indem der Sender ein RTS-Paket mit der Belegungsdauer für diesen Kanal an den Empfänger sendet, welcher dann zur Bestätigung ein CTS-Paket verschickt.
 Erhält der Sender diese Bestätigung, kann er den Kanal sicher kollisionsfrei für den vorgesehenen Zeitraum nutzen.
 Bei \textit{RTS-CTS} können ausschließlich Kollisionen beim Senden der RTS- bzw. CTS-Pakete vorkommen, welche in diesem Fall mit zufälliger Wartezeit erneut gesendet werden können.
 \textit{Ready-to-Send Clear-to-Send} ist ein Protokoll welches der Kategorie \textit{time delay} (\textit{TD}) angehört.\\
 Mit \textit{black burst} (\textit{BB}) existiert eine weitere Option bei der Knoten die eine Nachricht senden wollen ein Rauschsignal ausgeben und erst dann die Nachricht senden, wenn sie kein Rauschsignal von anderen Knoten empfangen.
 
 \subsection{Konnektivität}
-Der temporäre Verlust der Verbindung zwischen Fahrzeugen oder RSUs stellt für manche Kommunikationsrotokolle ein Problem dar, da diese auf der Annahme einer ständigen Verbindung aufbauen.
-Sollten Schwierigkeiten bei der Verbindung auftauchen können Durchsatz und Zuverlässigkeit eines solchen Protokolls stark schwanken.
-Für ein Szenario in dem eine ständige Verbindung vorrausgesetzt wird, kommt der Begriff \textit{always connected} (\textit{AC}) zum Einsatz.
-Andere Protokolle betrachten ein anderes Szenario (\textit{intermittent connectivity} (\textit{IC})) in dem es zu temporären Aussetzern bei der Verbindung kommen kann, wodurch diese bei Konnektivitäts-Problemen weniger Einbusen bei der Performance haben.
+Der temporäre Verlust der Verbindung zwischen Fahrzeugen oder RSUs stellt für manche Kommunikationsprotokolle ein Problem dar, da diese auf der Annahme einer ständigen Verbindung aufbauen.
+Sollten Schwierigkeiten bei der Verbindung auftauchen, können Durchsatz und Zuverlässigkeit eines solchen Protokolls stark schwanken.
+Für ein Szenario in dem eine ständige Verbindung vorausgesetzt wird, kommt der Begriff \textit{always connected} (\textit{AC}) zum Einsatz.
+Andere Protokolle betrachten ein anderes Szenario (\textit{intermittent connectivity} (\textit{IC})), in dem es zu temporären Aussetzern bei der Verbindung kommen kann, wodurch diese bei Konnektivitätsproblemen weniger Einbußen bei der Performance haben.
 Diese Resistenz gegen Verbindungsausfälle kann unter anderem mit dem Zwischenspeichern von Nachrichten erreicht werden.
 
 
 \subsection{Dringlichkeit von Nachrichten}
 Die \textit{Dringlichkeit} beim Versenden einer Nachricht kann voneinander abweichen.
-Eine Nachricht welche vor einen Unfall in unmittelbarer Nähe warnt, erfordert eine möglichst kurze Zeit für die Übertragung.
+Eine Nachricht, welche vor einen Unfall in unmittelbarer Nähe warnt, erfordert eine möglichst kurze Zeit für die Übertragung.
 Das derartige Versenden von Nachrichten wird als \textit{zeitkritisch} (\textit{TC} von engl. \textit{time critical}) bezeichnet.
 Es ist zu beachten, dass die Benachrichtigung für Fahrzeuge in der Nähe nur zeitkritisch ist, falls diese sich in Richtung des Unfalls bewegen.
 Im Gegensatz zu den zeitkritischen Nachrichten stehen die sogenannten \textit{zuverlässigkeits-orientierten} (\textit{RO} von engl. \textit{reliability-oriented}) Nachrichten.
@@ -523,7 +523,7 @@ Eine sogenannte \textit{vollständige Nachricht} (\textit{FM} von engl. \textit{
 Im Gegensatz dazu stehen Nachrichten, bei denen die Knoten, welche die Nachricht weiterleiten sollen, in der Nachricht enthalten sind.
 Diese Nachrichten werden unter \textit{forwarder attached} (\textit{FA}) zusammengefasst.
 Algorithmen die auf \textit{FA} basieren gelten als \textit{Sender orientiert}, da jeweils der Sender der Nachricht darüber entscheidet, welcher Empfänger-Knoten die Nachricht weiterleitet.
-Aufgrund der fehlenden Kenntnis des Senders über die Nachbar-Knoten der Empfänger, ist der Sender nicht dazu in der Lage die bestmöglichen Entscheidungen darüber treffen welcher Empfänger die Nachricht weiterleiten soll.
+Aufgrund der fehlenden Kenntnis des Senders über die Nachbarknoten der Empfänger, ist der Sender nicht dazu in der Lage, die bestmöglichen Entscheidungen darüber treffen welcher Empfänger die Nachricht weiterleiten soll.
 Umgekehrt gelten die auf \textit{FM} basierenden Algorithmen als \textit{Empfänger orientiert} und sind generell deutlich zuverlässiger.
 
 
