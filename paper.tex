@@ -431,8 +431,7 @@ Ein derartiger Bereich kann exemplarisch das Umfeld eines Unfalls sein.
 Dabei ist zu beachten, dass der Fokus auf denjenigen Fahrzeugen liegen muss, die sich dem Unfall annähern.
 Unter Umständen involviert das \textit{geocasting} auch einen \textit{routing} Prozess zu einem bestimmten Bereich hin, bevor eine Nachricht dann unter allen Fahrzeugen in diesem Bereich verbreitet werden kann.
 
-\subsection{Straßen-Szenario}
-\label{subsec:straßen-szenario}
+\subsection{Straßen-Szenario}\label{subsec:strassen-szenario}
 Infrastrukturen und Straßenformen wie zum Beispiel Landstraßen oder Autobahnen müssen bezüglich der Kommunikation zwischen einzelnen Automobilen unterschieden werden.
 So werden Straßenformen wie die Autobahn welche keine Kreuzungen besitzen als \textit{eindimensional (1D)} bezeichnet.
 Ebenso werden Straßen zwischen zwei Kreuzungen als \textit{eindimensional} eingestuft.
@@ -539,7 +538,7 @@ Abschließend findet sich eine tabellarische Übersicht der Protokolle im Bezug 
 \subsection{Zuverlässiges und effizientes Broadcasting in VANETs (ackPBSM)}
 Bei \textit{ackPBSM} (von engl. \textit{parameterless reliable broadcasting strategy with acknowledgement}) handel es sich um eine zuverlässige Strategie für Broadcasts welche keine Parameter nutzt und \textit{Acknowledgements} zur bestätigung von Nachrichten nutzt.
 Ziel des Protokolls sind eine hohe Zuverlässigkeit beim Versenden von Nachrichten sowie die Reduzierung der benötigten Nachrichten zum weiterverbreiten der Nachricht.
-Dabei ist \textit{ackPBSM} unabhängig vom Straßen-Szenario aus \ref{subsec:straßen-szenario} und funktioniert sowohl für \textit{eindimensionale} als auch für \textit{zweidimensionale} Szenarios.
+Dabei ist \textit{ackPBSM} unabhängig vom Straßen-Szenario aus \ref{subsec:strassen-szenario} und funktioniert sowohl für \textit{eindimensionale} als auch für \textit{zweidimensionale} Szenarios.
 Das Protokoll nutzt \textit{beacon acknowledgements} (\textit{BA}) um Informationen über andere Fahrzeuge zu gewinnen, welche die Postion des Senders sowie Bestätigungen von erhaltenen Nachrichten enthalten.
 Um insgesamt möglichst wenige Nachrichten für einen Broadcast zu benötigen wird ein \textit{minimaler Spannbaum} erzeugt.
 Dies geschieht, indem jedes Fahrzeug periodisch eine Art Start-Nachricht versendet (oder ein \textit{beacon}) woraus daraufhin ohne weiteren Overhead eine \textit{untereinander verbundene domierende Menge} (\textit{CDS} von engl. \textit{connected dominating set}) erzeugt werden kann.
