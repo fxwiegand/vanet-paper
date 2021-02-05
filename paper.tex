@@ -210,6 +210,7 @@
 % In the bibliography, references have to be formatted as 1., 2., ... not [1], [2], ...
 \renewcommand{\bibnumfmt}[1]{#1.}
 
+
 \ifluatex
   % does not work when using luatex
   % see: https://tex.stackexchange.com/q/419288/9075
@@ -229,6 +230,8 @@
 % Source: https://tex.stackexchange.com/a/32993/9075
 \usepackage{stfloats}
 \fnbelowfloat
+
+\usepackage{lscape}
 
 % Enable that parameters of \cref{}, \ref{}, \cite{}, ... are linked so that a reader can click on the number an jump to the target in the document
 \usepackage{hyperref}
@@ -627,10 +630,11 @@ So lassen sich wie in \ref{subsec:strassen-szenario} beschrieben, Protokolle fü
 Daraufhin wurden verschiedene Protokolle vorgestellt und im Hinblick auf die Taxonomie eingeordnet.
 Eine Übersicht mit den vorgestellten sowie mehreren weiteren Protokollen findet sich in \ref{table:1} in kompakter Form\cite{conti2013mobile}.
 
+\begin{landscape}
 \begin{table}[]
     \begin{tabular}{llllllllll}
      \toprule
-    Protokoll                     & Problem Statement     & Transmission Dimension    & Neighbor Knowledge     & Acknowledgement     & Starting Forwarder Selection    & Compete to Retransmit & Connectivity & Urgency & Message Content \\
+      Protokoll &  Problem \newline Statement & Transmission \newline Dimension &  Neighbor \newline Knowledge &  Acknowledgement &  Starting \newline Forwarder \newline Selection &  Compete to \newline Retransmit &  Connectivity &  Urgency &  Message \newline Content \\
      \midrule
      Probabilistic, naive flooding & G        & 2D & NN    & NA & AA     & NC       & IC    & RO & FM \\
     Middle                        & G        & 1D & NN    & NA & IA     & TD-D     & AC    & RO & FA \\
@@ -664,6 +668,7 @@ Eine Übersicht mit den vorgestellten sowie mehreren weiteren Protokollen findet
   \caption{Übersicht über verschiede Kommunikationsprotokolle für VANETs\cite{conti2013mobile}}
   \label{table:1}
 \end{table}
+\end{landscape}
 
 \subsubsection*{Acknowledgments}
 \ldots
