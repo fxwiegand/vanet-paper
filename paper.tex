@@ -631,11 +631,51 @@ Für eine zeitkritische Nutzung des Protokolls müsste die Funktion für die zei
 \subsection{Improved Greedy Traffic-Aware Routing Protocol (GyTAR)}
 \subsection{Acces-Overlay Routing by Two-Phase Routing Protocol (TOPO)}
 
-\section{Zusammenfassung}
-\label{sec:summary}
-
-\section{Fazit und Ausblick}
+\section{Zusammenfassung und Fazit}
 \label{sec:conclusion}
+VANETs können das Verkehrsgeschehen überaus positiv auf unterschiedlichste Arten beeinflussen.
+Die Kommunikation zwischen einzelnen Fahrzeugen und von Fahrzeugen zu anderer Infrakstruktur ist hierzu unerlässlich.
+Um bestehende Kommunikationprotokolle einordnen zu können und eine Orientierung für die Entwicklung von neuen Protokollen bieten zu können, wurde eine Taxonomie für diese vorgestellt.
+Zudem lassen sich mit der Taxonomie die Grenzen von einzelnen Protokollen leicht erkennen.
+So lassen sich wie in \ref{subsec:strassen-szenario} beschrieben, Protokolle für ein \textit{eindimensionales} Szenario nicht auf alle realen Applikationen ohne weiteres anwenden.
+Daraufhin wurden verschiedene Protokolle vorgestellt und im Hinblick auf die Taxonomie eingeordnet.
+Eine Übersicht mit den vorgestellten sowie mehreren weiteren Protokollen findet sich in \ref{table:1} in kompakter Form\cite{conti2013mobile}.
+
+\begin{table}[]
+  \begin{tabular}{llllllllll}
+    Protokoll                     & Problem Statement     & Transmission Dimension    & Neighbor Knowledge     & Acknowledgement     & Starting Forwarder Selection    & Compete to Retransmit & Connectivity & Urgency & Message Content \\
+    \hline
+    Probabilistic, naive flooding & G        & 2D & NN    & NA & AA     & NC       & IC    & RO & FM \\
+    Middle                        & G        & 1D & NN    & NA & IA     & TD-D     & AC    & RO & FA \\
+    ackPBSM                       & G        & 2D & NP    & BA & LA, NE & TD-D     & IC    & RO & FM \\
+    Persistence                   & G        & 1D & NN    & PA & IA     & TD-D     & AC    & RO & FM \\
+    MHVB                          & G        & 1D & NN    & PA & NE     & TD-D     & AC    & TC & FM \\
+    EMDOR                         & G        & 1D & NN    & BA & IA, LA & TD-D     & AC    & TC & FA \\
+    EMDV                          & G        & 2D & NP    & RE & IA     & TD-D     & AC    & TC & FA \\
+    ReC                           & G        & 2D & NP    & BA & IA     & TD-D     & IC    & TC & FM \\
+    OPERA                         & R-SS     & 1D & NP    & BA & LA, NE & X        & IC    & TC & FM \\
+    BPAB                          & R-SS     & 1D & NN    & PA & NE     & BB, TD-R & AC/IC & TC & FA \\
+    TRADE/DDT                     & R-SS     & 1D & NP/NN & NA & IA     & TD-D     & AC    & RO & FA \\
+    CBRF                          & R-SS     & 1D & NN    & BA & IA     & TD-R     & AC    & TC & FA \\
+    DDP                           & R-SS     & 1D & NP    & BA & IA     & TD-D     & IC    & TC & FM \\
+    DV-CAST                       & R-SS     & 1D & NP    & PA & IA     & TD-D     & AC    & RO & FM \\
+    VDEB                          & R-SS     & 1D & NP    & BA & I      & TD-D     & AC    & TC & FA \\
+    TOGO                          & R-LS     & 1D & NP    & BA & IA     & TD-D     & IC    & RO & FM \\
+    DAER                          & R-FD, LS & 2D & NP    & BA & IA     & TD-D     & AC    & RO & FM \\
+    CAR                           & R-LS     & 2D & NP    & BA & IA     & TD-R     & IC    & RO & FM \\
+    D-greedy                      & R-LS     & 2D & NP    & BA & IA     & TD-D     & IC    & TC & FM \\
+    VADD                          & R-LS     & 2D & NP    & BA & IA     & TD-D     & IC    & TC & FM \\
+    TBD                           & R-LS     & 2D & NP    & BA & IA     & TD-R     & IC    & TC & FM \\
+    SADV                          & R-LS     & 2D & NP    & BA & IA     & TD-D     & IC    & TC & FM \\
+    LD-CROP                       & R-LS     & 2D & NP    & BA & IA     & TD-R     & IC    & RO & FM \\
+    GeOpps                        & R-LS     & 2D & NP    & BA & IA     & TD-D     & IC    & TC & FA \\
+    RBVT                          & R-FD, LS & 2D & NP    & BA & IA     & TD-D     & AC    & RO & FA \\
+    GyTAR                         & R-LS     & 2D & NP    & BA & IA     & TD-D     & IC    & RO & FA \\
+    TOPO                          & R-LS     & 2D & NP    & BA & IA     & TD-R     & IC    & RO & FA
+  \end{tabular}
+  \caption{Übersicht über verschiede Kommunikationsprotokolle für VANETs\cite{conti2013mobile}}
+  \label{table:1}
+\end{table}
 
 \subsubsection*{Acknowledgments}
 \ldots
