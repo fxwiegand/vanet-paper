@@ -628,11 +628,11 @@ Daraufhin wurden verschiedene Protokolle vorgestellt und im Hinblick auf die Tax
 Eine Übersicht mit den vorgestellten sowie mehreren weiteren Protokollen findet sich in \ref{table:1} in kompakter Form\cite{conti2013mobile}.
 
 {\begin{table}[]
-   \resizebox{\linewidth}{!}{
     \begin{tabular}{llllllllll}
+     \toprule
     Protokoll                     & Problem Statement     & Transmission Dimension    & Neighbor Knowledge     & Acknowledgement     & Starting Forwarder Selection    & Compete to Retransmit & Connectivity & Urgency & Message Content \\
-    \hline
-    Probabilistic, naive flooding & G        & 2D & NN    & NA & AA     & NC       & IC    & RO & FM \\
+     \midrule
+     Probabilistic, naive flooding & G        & 2D & NN    & NA & AA     & NC       & IC    & RO & FM \\
     Middle                        & G        & 1D & NN    & NA & IA     & TD-D     & AC    & RO & FA \\
     ackPBSM                       & G        & 2D & NP    & BA & LA, NE & TD-D     & IC    & RO & FM \\
     Persistence                   & G        & 1D & NN    & PA & IA     & TD-D     & AC    & RO & FM \\
@@ -659,10 +659,10 @@ Eine Übersicht mit den vorgestellten sowie mehreren weiteren Protokollen findet
     RBVT                          & R-FD, LS & 2D & NP    & BA & IA     & TD-D     & AC    & RO & FA \\
     GyTAR                         & R-LS     & 2D & NP    & BA & IA     & TD-D     & IC    & RO & FA \\
     TOPO                          & R-LS     & 2D & NP    & BA & IA     & TD-R     & IC    & RO & FA
-  \end{tabular}
+     \bottomrule
+    \end{tabular}
   \caption{Übersicht über verschiede Kommunikationsprotokolle für VANETs\cite{conti2013mobile}}
   \label{table:1}
-  \endgroup }
 \end{table}
 
 \subsubsection*{Acknowledgments}
