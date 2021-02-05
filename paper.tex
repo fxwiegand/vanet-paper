@@ -627,8 +627,9 @@ So lassen sich wie in \ref{subsec:strassen-szenario} beschrieben, Protokolle fü
 Daraufhin wurden verschiedene Protokolle vorgestellt und im Hinblick auf die Taxonomie eingeordnet.
 Eine Übersicht mit den vorgestellten sowie mehreren weiteren Protokollen findet sich in \ref{table:1} in kompakter Form\cite{conti2013mobile}.
 
-\resizebox{\linewidth}{!}{\begin{table}[]
-  \begin{tabular}{llllllllll}
+{\begin{table}[]
+   \resizebox{\linewidth}{!}{
+    \begin{tabular}{llllllllll}
     Protokoll                     & Problem Statement     & Transmission Dimension    & Neighbor Knowledge     & Acknowledgement     & Starting Forwarder Selection    & Compete to Retransmit & Connectivity & Urgency & Message Content \\
     \hline
     Probabilistic, naive flooding & G        & 2D & NN    & NA & AA     & NC       & IC    & RO & FM \\
@@ -661,7 +662,8 @@ Eine Übersicht mit den vorgestellten sowie mehreren weiteren Protokollen findet
   \end{tabular}
   \caption{Übersicht über verschiede Kommunikationsprotokolle für VANETs\cite{conti2013mobile}}
   \label{table:1}
-\end{table}}
+}
+\end{table}
 
 \subsubsection*{Acknowledgments}
 \ldots
