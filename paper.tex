@@ -598,29 +598,14 @@ Zudem werden auch im Falle von Überholmannövern, wodurch neue Nachbarn aufkomm
 Ein Nachteile von \textit{ackPBSM} ergibt sich aus dem Overhead der durch die stets gesendeten Bestätigungen, die weitere Daten mit sich führen, entsteht.
 Für eine zeitkritische Nutzung des Protokolls müsste die Funktion für die zeitliche Verzögerung beim Weiterverbreiten einer Nachricht genauer spezifiert werden\cite{conti2013mobile}.
 
-%\subsection{Persistance-Based Protocols}
-%\subsection{Multihop Vehicular Broadcast (MHVB)}
-%\subsection{Emergency Message Dissemination with ACK-Overhearing Based Retransmission (EMDOR)}
-%\subsection{Distributed Fair Power Adjustment Protocol (D-FPAV)}
-%\subsection{Receiver Consensus (ReC)}
-%\subsection{DPP und OPERA}
-%\subsection{Binary-Partition-Assisted Broadcast (BPAB)}
-%\subsection{Track Detection und Distance Defer Transmission Protocols (TRADE und DDT)}
-%\subsection{Connection-Based Restricted Forwarding (CBRF)}
-%\subsection{Distributed Vehicular Broadcast (DV-CAST)}
-%\subsection{Vehicle Density-Based Emergency Broadcasting (VDEB)}
-%\subsection{Topology-Assisted Geo-Opportunistic Routing (TO-GO)}
-%\subsection{Distance-Aware Epidemic Routing (DAER)}
-%\subsection{Connectivity-Aware Routing (CAR)}
-%\subsection{Delay-Bounded Routing in VANETs (D-Greedy)}
-%\subsection{Vehicle-Assisted Data Delivery in VANETs (VADD)}
-%\subsection{Trajectory-Based Data Forwarding for Light-Traffic in VANETs (TBD)}
-%\subsection{Static-Node-Assisted Adaptive Routing Protocol in VANETs (SADV)}
-%\subsection{Location- and Delay-Aware Cross-Layer Communication (LD-CROP)}
-%\subsection{Geopgraphical Opportunistic Routing (GeoOpps)}
-%\subsection{Road-Based Vehicular Traffic Routing (RBVT)}
-%\subsection{Improved Greedy Traffic-Aware Routing Protocol (GyTAR)}
-%\subsection{Acces-Overlay Routing by Two-Phase Routing Protocol (TOPO)}
+\subsection{Static-Node-Assisted Adaptive Routing Protocol in VANETs (SADV)}
+Um Nachrichten trotz temporärer Verluste \textit{(IC)} der Verbindung von Fahrzeugen an das gewünschte Ziel zu liefern, nutzt \textit{SADV} stationäre Einheiten (RSUs) an Kreuzungen welche die Nachricht wiederum an alle benachbarten RSUs senden um sicherzustellen das die Nachricht auf dem schnellsten Weg zum Ziel kommt \textit{(TC)}.
+\textit{SADV} transportiert Nachrichten auch über Kreuzungen und wurde für ein \textit{zweidimensionales} Szenario konstruiert.
+Eine wichtige Rolle für eine reale Anwendung von \textit{SADV} spielt die Reduzierung des exponentiellen Overhead, der durch das Weiterleiten an alle benachbarten RSUs und das temporäre Zwischenspeichern der Nachrichten entsteht.
+Hierzu werden doppelte Nachrichten sofort gelöscht und das Weiterleiten an alle benachbarten RSUs wird auf Kreuzungen beschränkt.
+Um beim Übertragung eine möglichst geringe zeitliche Verzögerung zu haben, werden ständig die einzelnen Übertragungszeiten mit Hilfe von Echtzeit-Daten zwischen den einzelnen Knoten berechnet um so die Übertragung mit geringstmöglicher Verzögerung durchführen zu können.
+Ein wichtiger und vermutlich entscheidender Faktor bei der realen Nutzbarkeit des Protokolls spielen die stationären RSUs.
+Diese sind bisher kaum vorhanden, wären sehr kostspielig in der Aufstellung sowie der Beschaffung und machen einen Einsatz von \textit{SADV} in naher Zukunft eher unwahrscheinlich.
 
 \section{Zusammenfassung und Fazit}
 \label{sec:conclusion}
