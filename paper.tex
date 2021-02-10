@@ -446,7 +446,7 @@ Unter Umständen involviert das \textit{geocasting} auch einen \textit{routing} 
 Infrastrukturen und Straßenformen wie zum Beispiel Landstraßen oder Autobahnen müssen bezüglich der Kommunikation zwischen einzelnen Automobilen unterschieden werden.
 So werden Straßenformen wie die Autobahn welche keine Kreuzungen besitzen als \textit{eindimensional (1D)} bezeichnet.
 Ebenso werden Straßen zwischen zwei Kreuzungen als \textit{eindimensional} eingestuft.
-Neben der grundlegen eindimensionalen Straßenform existiert ein allgemeineres Szenario mit vielen Kreuzungen an denen Autos abbiegen können und oft die befahrene Straße wechseln.
+Neben der grundlegenden eindimensionalen Straßenform existiert ein allgemeineres Szenario mit vielen Kreuzungen an denen Autos abbiegen können und oft die befahrene Straße wechseln.
 Solch ein Szenario existiert in vielen Städten und wird als \textit{zweidimensional (2D)} bezeichnet.
 Autobahnauffahrten und Kreisverkehre lassen sich keinen der beiden Szenarios eindeutig zuordnen und befinden sich zwischen diesen.
 Kommunikationsprotokolle sollten sich im bestmöglichen Fall an den jeweils vorliegenden Straßentyp anpassen.
@@ -455,9 +455,9 @@ Anders herum ist dies nicht ohne weiteres möglich\cite{conti2013mobile}.
 
 \subsection{Benachbarte Fahrzeuge}\label{subsec:benachbarte-fahrzeuge}
 Kommunikationsprotokolle lassen sich in hinsichtlich der erforderlichen Kenntnis über benachbarte Fahrzeuge unterteilen.
-Hierbei kommen manche Protokolle ohne Kentnisse über andere Fahrzeuge in der Nähe aus (\textit{without neighbor knowledge} oder \textit{NN}).
+Hierbei kommen manche Protokolle ohne Kenntnisse über andere Fahrzeuge in der Nähe aus (\textit{without neighbor knowledge} oder \textit{NN}).
 Im anderen Fall werden periodisch unter allen benachbarten Fahrzeugen Informationen wie Position oder Geschwindigkeit ausgetauscht.
-Diese so genannte \textit{neighbor positional knowledge (NP)} wird mittels DSRC (\textit{engl. Dedicated Short-Range Communication}) ausgetauscht.
+Diese sogenannte \textit{neighbor positional knowledge (NP)} wird mittels DSRC (\textit{engl. Dedicated Short-Range Communication}) ausgetauscht.
 Bei DSRC handelt es sich um ein MAC-Protokoll (\textit{engl. Medium Access Control}) welches auf einem Frequenzbereich um 5,9 GHz arbeitet\cite{conti2013mobile}.
 
 \subsection{Bestätigung empfangener Nachrichten}
@@ -475,7 +475,7 @@ Manche Protokolle kommen vollkommen ohne \textit{Acknowledgements} aus und werde
 \subsection{Start des Prozesses zur Weiterleitung von Nachrichten}\label{subsec:forwarder-selection}
 Ein Fahrzeug kann sich in zwei verschiedenen Zuständen befinden.
 Im \textit{idle} Zustand senden das Fahrzeug keine Nachrichten.
-Dies kann entweder eintreteten, falls keine Nachrichten empfangen wurden und somit auch keine weitergeleitet werden können, oder aber durch die Information das alle direkten Nachbarn des Fahrzeugs alle empfangenen Nachrichten bereits erhalten haben.
+Dies kann entweder eintreten, falls keine Nachrichten empfangen wurden und somit auch keine weitergeleitet werden können, oder aber durch die Information das alle direkten Nachbarn des Fahrzeugs alle empfangenen Nachrichten bereits erhalten haben.
 Befindet sich ein Fahrzeug allerdings im aktiven Zustand (\textit{active}), so können Nachrichten weitergeleitet werden.
 Ebenfalls müssen dann diejenigen Nachbarn ausgewählt werden, welche die Nachricht weiter verbreiten sollen.
 Für die Entscheidung, wann ein Fahrzeug vom \textit{idle} in den \textit{active} Zustand wechselt, gibt es mehrere Möglichkeiten, die sich allerdings gegenseitig nicht ausschließen und in manchen Protokollen miteinander kombiniert werden.
@@ -495,7 +495,7 @@ Ein anderes Fahrzeug $L$ gilt genau dann als von $N$ abgedeckt, falls sich diese
 Hat ein Fahrzeug wie in \ref{subsec:forwarder-selection} beschrieben, den aktiven Zustand eingenommen, kann es – muss aber nicht zwingend – Nachrichten weiterverbreiten.
 Da die Kommunikation über einem einzigen Kanal läuft, können nicht zwei Knoten gleichzeitig senden, da es sonst zu Kollisionen kommen könnte.
 Bedingt dadurch kommt es im Normalfall zu einer Art Wettbewerb zwischen den Fahrzeugen, bei der der Gewinner die Möglichkeit erhält Nachrichten zu versenden.
-Die \textit{medium acces control (MAC)}, eine Erweiterung der OSI-Modells, ermöglicht es allerdings Fahrzeugen in kurzen zeitlichen Abständen voneinander zu senden, indem andere Fahrzeuge jeweils auf die Ankunft und damit den Abschluss einer Übertragung warten.
+Die \textit{medium access control (MAC)}, eine Erweiterung der OSI-Modells, ermöglicht es allerdings Fahrzeugen in kurzen zeitlichen Abständen voneinander zu senden, indem andere Fahrzeuge jeweils auf die Ankunft und damit den Abschluss einer Übertragung warten.
 Somit erübrigt sich der Wettbewerb durch die Nutzung der MAC-Schicht, wodurch Protokolle die nur diese Nutzen der Kategorie \textit{NC} bzw. \textit{no competition} angehören.\\
 Bei der Nutzung von \textit{DSRC} werden, angelehnt an IEEE 802.11, Zeitslots genutzt, um Kollisionen möglichst zu vermeiden.
 Ein Fahrzeug kann senden, wenn sich eine festgelegte Anzahl an freien Zeitslots ergibt.
@@ -547,19 +547,19 @@ Zudem sollen mögliche Schwachstellen der einzelnen Protokolle aufgezeigt werden
 Abschließend findet sich eine tabellarische Übersicht der Protokolle im Bezug auf die Taxonomie\cite{conti2013mobile}.
 
 \subsection{Zuverlässiges und effizientes Broadcasting in VANETs (ackPBSM)}
-Bei \textit{ackPBSM} (von engl. \textit{parameterless reliable broadcasting strategy with acknowledgement}) handel es sich um eine zuverlässige Strategie für Broadcasts welche keine Parameter nutzt und \textit{Acknowledgements} zur bestätigung von Nachrichten nutzt.
-Ziel des Protokolls sind eine hohe Zuverlässigkeit beim Versenden von Nachrichten sowie die Reduzierung der benötigten Nachrichten zum weiterverbreiten der Nachricht.
+Bei \textit{ackPBSM} (von engl. \textit{parameterless reliable broadcasting strategy with acknowledgement}) handelt es sich um eine zuverlässige Strategie für Broadcasts welche keine Parameter nutzt und \textit{Acknowledgements} zur Bestätigung von Nachrichten nutzt.
+Ziel des Protokolls sind eine hohe Zuverlässigkeit beim Versenden von Nachrichten sowie die Reduzierung der benötigten Nachrichten zum Weiterverbreiten der Nachricht.
 Dabei ist \textit{ackPBSM} unabhängig vom Straßen-Szenario aus \ref{subsec:strassen-szenario} und funktioniert sowohl für \textit{eindimensionale} als auch für \textit{zweidimensionale} Szenarios.
 Das Protokoll nutzt \textit{beacon acknowledgements} (\textit{BA}) um Informationen über andere Fahrzeuge zu gewinnen, welche die Postion des Senders sowie Bestätigungen von erhaltenen Nachrichten enthalten.
 Um insgesamt möglichst wenige Nachrichten für einen Broadcast zu benötigen wird ein \textit{minimaler Spannbaum} erzeugt.
-Dies geschieht, indem jedes Fahrzeug periodisch eine Art Start-Nachricht versendet (oder ein \textit{beacon}) woraus daraufhin ohne weiteren Overhead eine \textit{untereinander verbundene domierende Menge} (\textit{CDS} von engl. \textit{connected dominating set}) erzeugt werden kann.
-Eine \textit{untereinander verbundene domierende Menge} enthält eine minimale Anzahl an Knoten, sodass jeder Knoten im Netz entweder selbst Teil dieser ist oder Nachbar eines Knoten ist, welche in der \textit{untereinander verbundenen domierenden Menge} enthalten ist.
+Dies geschieht, indem jedes Fahrzeug periodisch eine Art Start-Nachricht versendet (oder ein \textit{beacon}) woraus daraufhin ohne weiteren Overhead eine \textit{untereinander verbundene dominierende Menge} (\textit{CDS} von engl. \textit{connected dominating set}) erzeugt werden kann.
+Eine \textit{untereinander verbundene dominierende Menge} enthält eine minimale Anzahl an Knoten, sodass jeder Knoten im Netz entweder selbst Teil dieser ist oder Nachbar eines Knoten ist, welche in der \textit{untereinander verbundenen dominierenden Menge} enthalten ist.
 Zudem müssen alle Knoten, die Teil des \textit{CDS} sind, untereinander ebenfalls verbunden sein.
 Dies stellt unter anderem sicher, dass nach einer Nachricht von einem beliebigen Knoten $V$ sich diese im ganzen Netz verbreitet wenn nur Knoten des \textit{CDS} die Nachricht an alle Nachbarn verbreiten.
 Die Nachricht erreicht sicher das \textit{CDS}, da $V$ entweder selbst Teil des \textit{CDS} sein muss oder mindesten einen Nachbarn besitzen muss der diese Eigenschaft erfüllt.
-Durch die Nutzung einer \textit{untereinander verbundenen domierenden Menge} lassen sich Kollisonen von Nachrichten reduzieren, da insgesamt weniger Nachricht versendet werden müssen für einen Broadcast.
+Durch die Nutzung einer \textit{untereinander verbundenen dominierenden Menge} lassen sich Kollisionen von Nachrichten reduzieren, da insgesamt weniger Nachricht versendet werden müssen für einen Broadcast.
 Dies ist besonders nützlich in dichten Netzwerken die sich besonders in Staus oder beim Warten vor einer Ampel bilden.
-Es ist zu beachten, dass alle Knoten im Netz zusammen auch ein \textit{CDS} ergeben und die \textit{untereinander verbundene domierende Menge} zur optimalen Nutzung möglichst minimal sein sollte\cite{conti2013mobile}.\\
+Es ist zu beachten, dass alle Knoten im Netz zusammen auch ein \textit{CDS} ergeben und die \textit{untereinander verbundene dominierende Menge} zur optimalen Nutzung möglichst minimal sein sollte\cite{conti2013mobile}.\\
 Bei der Nutzung von \textit{ackPBSM} besitzt jedes Fahrzeug $C$ zwei Listen:
 \begin{itemize}
   \item \textit{R} enthält diejenigen Nachbarn, von denen $C$ annimmt, dass sie die Nachricht erhalten haben.
@@ -569,7 +569,7 @@ Fall $C$ eine Nachricht zum wiederholten mal empfängt, werden alle Fahrzeuge we
 Die Zeit in der entschieden wird, ob eine Nachricht von einem Knoten im \textit{CDS} weiterverbreitet wird, ist antiproportional zur Anzahl von Knoten in \textit{N}.
 Das bedeutet je mehr direkte Nachbarn eines Knotens $C$ eine Nachricht vermutlich nicht erhalten haben, desto kürzer ist die Wartezeit bis zum weiterbreiten der Nachricht von $C$.
 Knoten welche sich nicht im \textit{CDS} befinden, besitzen allgemein eine längere Wartezeit.
-Bei \textit{ackPBSM} wird \textit{neighbor elimination (NE)} genutzt, da Fahrzeuge eine Nachricht nur dann weiterverbreitet wird, wenn sich mindestens ein Fahrezug in der Liste \textit{N} befindet.
+Bei \textit{ackPBSM} wird \textit{neighbor elimination (NE)} genutzt, da Fahrzeuge eine Nachricht nur dann weiterverbreitet wird, wenn sich mindestens ein Fahrzeug in der Liste \textit{N} befindet.
 Befindet sich nun mindesten ein Fahrzeug in \textit{N} wird die Nachricht versendet und alle Nachbarn werden in \textit{R} verschoben.
 Ein Fahrzeug $D$ kann von \textit{R} zurück nach \textit{N} verschoben werden, falls der Sender keine Bestätigung von $D$ über den Empfang der Nachricht erhält.
 \textit{ackPBSM} überwindet auch temporäre Verluste der Verbindung eines Fahrzeugs durch das Zwischenspeichern von Nachrichten und betrachtet somit das Szenario \textit{intermittent connectivity} (\textit{IC})\cite{conti2013mobile}.\\
@@ -593,17 +593,17 @@ Da $E$ und $F$ Teil des \textit{CDS} sind, kommen diese für die Weiterverbreitu
 Wenn $F$ nun die Nachricht weiterleitet, verlassen $E$ und $D$ den aktiven Zustand da sie die Nachricht zum wiederholten Male (nun von $F$) empfangen.
 Da $I$ nicht in Reichweite eines Fahrzeugs ist, kann es die Nachricht erst erhalten wenn zum Beispiel $H$ weiter fährt und sich somit $I$ annähert.
 Durch einen \textit{beacon} von $I$ erhält $H$ dann die Information, dass $I$ die Nachricht noch nicht erhalten (\textit{LA}) hat und kann diese, da sie zwischengespeichert wurde, (\textit{IC}) erneut senden.
-Durch die Bestätigungen über den Empfang der Nachricht ist \textit{ackPBSM} sehr zuverlässig, da im Falle eines Nicht-Erhaltens die Nachricht einfach erneut gesendet werden kann.
-Zudem werden auch im Falle von Überholmannövern, wodurch neue Nachbarn aufkommen, welche die Nachricht allerdings schon kennen, keine zusätzlichen versendet, da mit den \textit{beacon} der Empfang bestätigt wird und somit direkt Informationen über alle erhaltenen Nachrichten von neuen Nachbarn erhalten werden.\\
+Durch die Bestätigungen über den Empfang der Nachricht ist \textit{ackPBSM} sehr zuverlässig, da im Falle eines Nicht-Erhalten die Nachricht einfach erneut gesendet werden kann.
+Zudem werden auch im Falle von Überholmanövern, wodurch neue Nachbarn aufkommen, welche die Nachricht allerdings schon kennen, keine zusätzlichen versendet, da mit den \textit{beacon} der Empfang bestätigt wird und somit direkt Informationen über alle erhaltenen Nachrichten von neuen Nachbarn erhalten werden.\\
 Ein Nachteile von \textit{ackPBSM} ergibt sich aus dem Overhead der durch die stets gesendeten Bestätigungen, die weitere Daten mit sich führen, entsteht.
-Für eine zeitkritische Nutzung des Protokolls müsste die Funktion für die zeitliche Verzögerung beim Weiterverbreiten einer Nachricht genauer spezifiert werden\cite{conti2013mobile}.
+Für eine zeitkritische Nutzung des Protokolls müsste die Funktion für die zeitliche Verzögerung beim Weiterverbreiten einer Nachricht genauer spezifiziert werden\cite{conti2013mobile}.
 
 \subsection{Static-Node-Assisted Adaptive Routing Protocol in VANETs (SADV)}
 Um Nachrichten trotz temporärer Verluste \textit{(IC)} der Verbindung von Fahrzeugen an das gewünschte Ziel zu liefern, nutzt \textit{SADV} stationäre Einheiten (RSUs) an Kreuzungen welche die Nachricht wiederum an alle benachbarten RSUs senden um sicherzustellen das die Nachricht auf dem schnellsten Weg zum Ziel kommt \textit{(TC)}.
 \textit{SADV} transportiert Nachrichten auch über Kreuzungen und wurde für ein \textit{zweidimensionales} Szenario konstruiert.
 Eine wichtige Rolle für eine reale Anwendung von \textit{SADV} spielt die Reduzierung des exponentiellen Overhead, der durch das Weiterleiten an alle benachbarten RSUs und das temporäre Zwischenspeichern der Nachrichten entsteht.
 Hierzu werden doppelte Nachrichten sofort gelöscht und das Weiterleiten an alle benachbarten RSUs wird auf Kreuzungen beschränkt.
-Um beim Übertragung eine möglichst geringe zeitliche Verzögerung zu haben, werden ständig die einzelnen Übertragungszeiten mit Hilfe von Echtzeit-Daten zwischen den einzelnen Knoten berechnet um so die Übertragung mit geringstmöglicher Verzögerung durchführen zu können.
+Um beim Übertragung eine möglichst geringe zeitliche Verzögerung zu haben, werden ständig die einzelnen Übertragungszeiten mit Hilfe von Echtzeit-Daten zwischen den einzelnen Knoten berechnet um so die Übertragung mit geringst möglicher Verzögerung durchführen zu können.
 Ein wichtiger und vermutlich entscheidender Faktor bei der realen Nutzbarkeit des Protokolls spielen die stationären RSUs\cite{conti2013mobile}.
 Diese sind bisher kaum vorhanden, wären sehr kostspielig in der Aufstellung sowie der Beschaffung und machen einen Einsatz von \textit{SADV} in naher Zukunft eher unwahrscheinlich.
 
