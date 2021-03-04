@@ -366,7 +366,7 @@
   Die Kommunikation zwischen einzelnen Fahrzeugen im Verkehrsgeschehen bietet viele Möglichkeiten wie eine erhöhte Sicherheit durch Prävention von Unfällen oder auch ein höherer Verkehrsfluss durch Vermeidung von Staus.
   Automobile ad-hoc Netze oder auch VANETs (engl. Vehicular ad hoc networks) spielen dabei eine sehr wichtige Rolle.
   In dieser Ausarbeitung soll die Taxonomie für ein Kommunikationsprotokoll eines automobilen ad-hoc Netzes beschrieben werden.
-  Hierfür werden unterschiedliche Faktoren wie Verkehrs-Infrastruktur, Fahrzeug-Konnektivität oder auch die Kenntnis über andere Fahrzeuge in der Nähe zu Grunde gelegt.
+  Hierfür werden unterschiedliche Faktoren wie Verkehrs-Infrastruktur, Fahrzeug-Konnektivität oder auch die Kenntnis über andere Fahrzeuge in der Nähe im Details erläutert.
   Die vorgestellte Taxonomie soll dabei helfen, die grundlegenden Kommunikationsprotokolle zu verstehen und weiterzuentwickeln.
   Ebenfalls sollen etwaige Grenzen bestimmter Protokolle aufgezeigt werden welche vor dem möglichen Einsatz in VANETs abgeändert werden müssten\cite{conti2013mobile}.
 \end{abstract}
@@ -377,24 +377,24 @@
 
 \section{Einleitung}\label{sec:intro}
 Bei einem Automobile ad-hoc Netz, oder auch kurz VANET genannt, handelt es sich um eine Unterform eines mobilen ad-hoc Netzes welches sich aus einzelnen Fahrzeugen, die als Knoten betrachtet werden, zusammensetzt.
-VANETs sind ein wichtiger Bestandteil eines zukunftsorientierten intelligenten Transportsystems (ITS).
+VANETs sind ein wichtiger Bestandteil eines zukunftsorientierten und intelligenten Transportsystems (ITS).
 Allgemeine Ziele eines ITS sind mehr Verkehrssicherheit, ein besserer Verkehrsfluss und eine allgemeine Verbesserung des Fahrerlebnisses durch unterschiedliche Dienste.
-Durch Warnung vor bevorstehenden Kollisionen mit liegengebliebenen Fahrzeugen oder frühzeitigen Stauwarnungen aufgrund von Vorhersagen durch gesammelte Daten lassen sich mit VANETs diese Zielsetzungen realisieren.
+Durch Warnung vor bevorstehenden Kollisionen mit liegengebliebenen Fahrzeugen oder frühzeitigen Stauwarnungen, aufgrund von Vorhersagen durch gesammelte Daten, lassen sich mit VANETs diese Zielsetzungen realisieren.
 Die zwar zurückgehenden aber dennoch beachtlichen Zahlen von Verkehrstoten im Jahr 2020\cite{adacVerkehrstote} machen die weiterführende Entwicklung von VANETs äußerst erstrebenswert.
 Ebenso vorteilhaft könnten sich VANETs im Bezug auf anhaltende Probleme mit Stau-Bildung, insbesondere an Wochenenden in den Sommermonaten\cite{adacStaus}, auswirken.
-Aspekte wie das einfachere finden von Parkplätzen oder Restaurants gehören ebenfalls zu den möglichen Vorteilen der Nutzung eines automobile ad-hoc Netzes.
+Aspekte wie das einfachere finden von Parkplätzen oder Restaurants, gehören ebenfalls zu den möglichen Vorteilen der Nutzung eines automobile ad-hoc Netzes.
 Letztere Anwendung ist den sogenannten \textit{non-safety applications} eines VANETs zuzuordnen welche hauptsächlich dem Unterhaltungszweck dienen oder die Regelung des Verkehrsflusses zum Ziel haben.
 Die \textit{non-safety applications} (auch \textit{comfort services} oder \textit{general information services}) können Reisezeiten verkürzen, indem der Verkehr intelligent geführt wird und so Staus bereits im Vorfeld vermieden werden.
-Zusätzlich können Verbände bzw. Kolonnen gebildet werden, welche unter anderem den Verbrauch eines hinterher fahrenden Automobils durch geringeren Windwiderstand senken können.
+Zusätzlich können Verbände bzw. Kolonnen gebildet werden, welche unter anderem den Verbrauch eines hinterher fahrenden Automobils, durch geringeren Windwiderstand, senken können.
 An \textit{general information services} könnte durch mögliche Werbung oder andere Unterhaltungsdienste ebenfalls ein wirtschaftliches Interesse bestehen.
-Im Gegensatz zu den \textit{non-safety applications} stehen sogenannte \textit{safety applications} welche sich der Sicherheit im Straßenverkehr widmen.
+Im Gegensatz zu den \textit{non-safety applications} stehen sogenannte \textit{safety applications}, welche sich der Sicherheit im Straßenverkehr widmen.
 Da diese unmittelbar vor Unfällen warnen können, ist eine möglichst schnelle Übertragung der Nachrichten hierbei besonders wichtig.
-Um potenzielle Gefahren möglichst schnell zu erkennen werden bei \textit{safety applications} die Umgebung und Faktoren wie die eigene Postion und Geschwindigkeit ständig überwacht.
+Um potenzielle Gefahren möglichst schnell zu erkennen werden bei \textit{safety applications} die Umgebung und Faktoren, wie die eigene Position und Geschwindigkeit ständig überwacht.
 Besteht aufgrund der erfassten Daten eine akute Gefahr, wird eine Nachricht an umliegende Fahrzeuge im VANET verteilt, um diese zu warnen.
 \textit{Safety applications} basieren meist auf reiner \textit{V2V}-Kommunikation, also der direkten Kommunikation zwischen zwei Fahrzeugen.
 Gleiches gilt für andere Dienste welche Nachrichten an Fahrzeuge im lokalen Umfeld verbreiten wollen, wie zum Beispiel Werbung einer Tankstelle an Fahrzeuge im Umkreis.
-\textit{V2I}-Kommunikation ist die Kommunikation zwischen einem Fahrzeug und einem sekundären Interface wie einer stationären Einheit am Straßenrand (\textit{RSU} von engl. \textit{roadside unit}) mit Internet-Anbindung oder der direkten Verbindung eines Fahrzeugs via 5G\@.
-\textit{V2I} bietet im Vergleich zu \textit{V2V} diverse Vorteile wie eine höhere Zuverlässigkeit oder garantierte \textit{Quality of Service}.
+\textit{V2I}-Kommunikation ist die Kommunikation zwischen einem Fahrzeug und einem sekundären Interface, wie einer stationären Einheit am Straßenrand (\textit{RSU} von engl. \textit{roadside unit}) mit Internet-Anbindung oder der direkten Verbindung eines Fahrzeugs via 5G\@.
+\textit{V2I} bietet im Vergleich zu \textit{V2V} diverse Vorteile, wie eine höhere Zuverlässigkeit oder garantierte \textit{Quality of Service}.
 Mithilfe der Anbindung an das Internet können oben beschriebene Anwendungen, wie die Verbesserung des Verkehrsflusses durch intelligente Routen-Berechnung, zentralisiert werden\cite{conti2013mobile}.\\
 Das Ziel der Ausarbeitung besteht darin, in \ref{sec:taxcommunicationprotocol} eine Taxonomie für Kommunikationsprotokolle in VANETs vorzustellen.
 Des Weiteren werden in \ref{sec:protocols} verschiedene bestehende Protokolle vorgestellt und im Hinblick auf die Taxonomie eingeordnet und beurteilt.
@@ -410,7 +410,7 @@ Darüber hinaus findet sich im Fazit eine tabellarische Übersicht von weiteren 
 
 \section{Taxonomie für VANET-Kommunikationsprotokolle}
 \label{sec:taxcommunicationprotocol}
-Die Anforderungen an Kommunikationsprotokolle für VANETs variieren enorm und sind stark and unterschiedliche äußerliche Faktoren und Charakteristiken von diesen gebunden.
+Die Anforderungen an Kommunikationsprotokolle für VANETs variieren enorm und sind stark an unterschiedliche äußere Faktoren und Charakteristiken von diesen gebunden.
 Im folgenden soll eine Taxonomie basierend auf diesen Faktoren und Charakteristiken für ein solches Protokoll vorgestellt werden.
 
 \subsection{Grundlegende Definitionen}
@@ -421,11 +421,11 @@ Für die Taxonomie wird diese Kommunikation in drei Kategorien unterteilt:
   \item \textit{geocasting (one-to-all)}
   \item \textit{dissemination (one-to-some)}
 \end{itemize}
-Die hohe Mobilität der Fahrzeuge im VANET sowie deren variierenden Verbindungen untereinander machen das \textit{routing} zu einer anspruchsvollen Aufgabe.
+Die hohe Mobilität der Fahrzeuge im VANET, sowie deren variierenden Verbindungen untereinander, machen das \textit{routing} zu einer anspruchsvollen Aufgabe.
 Mit \textit{routing} lassen sich viele Kommunikationsformen umsetzen, darunter neben \textit{V2V} und \textit{V2I} auch \textit{one-way} und \textit{two-way communication}.
 Letzteres erlaubt auch die Kommunikationen zwischen zwei Fahrern oder auch die Reservierung von Parkplätzen.
 Um das Problem zu vereinfachen, lassen sich Annahmen über den Empfänger einer Nachricht treffen.
-Diese Annahmen können beispielsweise bei einem RSU eine genaue geografische Position sein oder die eines sich bewegenden Fahrzeugs welche natürlich basierend auf Fahrtrichtung und Geschwindigkeit des Fahrzeugs aktualisiert werden muss.
+Diese Annahmen können beispielsweise bei einem RSU eine genaue geografische Position sein oder die eines sich bewegenden Fahrzeugs, welche natürlich basierend auf Fahrtrichtung und Geschwindigkeit des Fahrzeugs aktualisiert werden muss.
 Mit der Nutzung von RSUs als Gateways lässt sich der \textit{routing} Prozess vereinfachen.
 Dabei reduziert sich der \textit{routing} Prozess vom Fahrzeug auf das Weiterleiten der Nachricht zum nächsten RSU\@.
 Dieser leitet die Nachricht an das RSU weiter, welches sich am nächsten zum Empfänger-Fahrzeug befindet, dieser schlussendlich dann an das Fahrzeug.
@@ -440,42 +440,42 @@ Im Vergleich zum \textit{broadcasting}, bei dem keine räumlichen Grenzen betrac
 Das \textit{geocasting} kann dabei sowohl von einem Fahrzeug als auch von einem RSU ausgehen und will auf jeden Fall alle Fahrzeuge in einem bestimmten Straßenabschnitt oder Bereich erreichen.
 Ein derartiger Bereich kann exemplarisch das Umfeld eines Unfalls sein.
 Dabei ist zu beachten, dass der Fokus auf denjenigen Fahrzeugen liegen muss, die sich dem Unfall annähern.
-Unter Umständen involviert das \textit{geocasting} auch einen \textit{routing} Prozess zu einem bestimmten Bereich hin, bevor eine Nachricht dann unter allen Fahrzeugen in diesem Bereich verbreitet werden kann\cite{conti2013mobile}.
+Unter Umständen involviert das \textit{geocasting} auch einen \textit{routing} Prozess zu einem bestimmten Bereich, bevor eine Nachricht dann unter allen Fahrzeugen in diesem Bereich verbreitet werden kann\cite{conti2013mobile}.
 
 \subsection{Straßen-Szenario}\label{subsec:strassen-szenario}
-Infrastrukturen und Straßenformen wie zum Beispiel Landstraßen oder Autobahnen müssen bezüglich der Kommunikation zwischen einzelnen Automobilen unterschieden werden.
-So werden Straßenformen wie die Autobahn welche keine Kreuzungen besitzen als \textit{eindimensional (1D)} bezeichnet.
+Infrastrukturen und Straßenformen, wie zum Beispiel Landstraßen oder Autobahnen, müssen bezüglich der Kommunikation zwischen einzelnen Automobilen unterschieden werden.
+So werden Straßenformen wie die Autobahn, welche keine Kreuzungen besitzen, als \textit{eindimensional (1D)} bezeichnet.
 Ebenso werden Straßen zwischen zwei Kreuzungen als \textit{eindimensional} eingestuft.
 Neben der grundlegenden eindimensionalen Straßenform existiert ein allgemeineres Szenario mit vielen Kreuzungen an denen Autos abbiegen können und oft die befahrene Straße wechseln.
 Solch ein Szenario existiert in vielen Städten und wird als \textit{zweidimensional (2D)} bezeichnet.
 Autobahnauffahrten und Kreisverkehre lassen sich keinen der beiden Szenarios eindeutig zuordnen und befinden sich zwischen diesen.
 Kommunikationsprotokolle sollten sich im bestmöglichen Fall an den jeweils vorliegenden Straßentyp anpassen.
-Protokolle welche für den allgemeineren Fall (2D) entwickelt wurden, können auch für eindimensionale Straßentypen angewendet werden.
+Protokolle welche für den allgemeineren Fall (2D) entwickelt wurden, können auch für eindimensionale Straßentypen genutzt werden.
 Anders herum ist dies nicht ohne weiteres möglich\cite{conti2013mobile}.
 
 \subsection{Benachbarte Fahrzeuge}\label{subsec:benachbarte-fahrzeuge}
-Kommunikationsprotokolle lassen sich in hinsichtlich der erforderlichen Kenntnis über benachbarte Fahrzeuge unterteilen.
+Kommunikationsprotokolle lassen sich hinsichtlich der erforderlichen Kenntnis über benachbarte Fahrzeuge unterteilen.
 Hierbei kommen manche Protokolle ohne Kenntnisse über andere Fahrzeuge in der Nähe aus (\textit{without neighbor knowledge} oder \textit{NN}).
 Im anderen Fall werden periodisch unter allen benachbarten Fahrzeugen Informationen wie Position oder Geschwindigkeit ausgetauscht.
 Diese sogenannte \textit{neighbor positional knowledge (NP)} wird mittels DSRC (\textit{engl. Dedicated Short-Range Communication}) ausgetauscht.
-Bei DSRC handelt es sich um ein MAC-Protokoll (\textit{engl. Medium Access Control}) welches auf einem Frequenzbereich um 5,9 GHz arbeitet\cite{conti2013mobile}.
+Bei DSRC handelt es sich um ein MAC-Protokoll (\textit{engl. Medium Access Control}), welches auf einem Frequenzbereich um 5,9 GHz arbeitet\cite{conti2013mobile}.
 
 \subsection{Bestätigung empfangener Nachrichten}
 Um sicherzustellen, dass gesendete Nachrichten auch empfangen wurden, können \textit{Acknowledgements} genutzt werden, die den Empfang einer Nachricht bestätigen.
-Eine Form um empfangene Nachrichten zu bestätigen sind die sogenannten \textit{beacon acknowledgements} (\textit{BA}).
-Hierbei werden stetig in einem festen Abstand \textit{beacons} versendet welche bei erfolgreichem Empfang einer Nachricht diesen bestätigen.
-Erhält nun der Sender $S$ ein \textit{beacon} des Empfängers $R$ kann dieser nun eindeutig feststellen welche Nachrichten $R$ bisher empfangen hat.
+Eine Form um empfangene Nachrichten zu bestätigen, sind die sogenannten \textit{beacon acknowledgements} (\textit{BA}).
+Hierbei werden stetig in einem festen Abstand \textit{beacons} versendet, welche bei erfolgreichem Empfang einer Nachricht diesen bestätigen.
+Erhält nun der Sender $S$ ein \textit{beacon} des Empfängers $R$, kann dieser nun eindeutig feststellen, welche Nachrichten $R$ bisher empfangen hat.
 Diese Methode der Bestätigung funktionieren ebenfalls per direkter Bestätigung, also ohne \textit{beacons}.
 Bestätigungen können auch von passiver Form sein (\textit{passive acknowledgement} bzw. \textit{PA}).
-Dabei kann der Sender durch den Empfang einer von ihm gesendeten Nachricht, welche somit zwingend weiter verbreitet wurde, Rückschlüsse auf den Empfang dieser ziehen.
+Dabei kann der Sender durch den Empfang einer von ihm gesendeten Nachricht, die somit zwingend weiter verbreitet wurde, Rückschlüsse auf den Empfang dieser ziehen.
 Eine weitere Möglichkeit stellt die \textit{reception estimation} (\textit{RE}) dar.
-Hierbei basieren Schlüsse vom Sender bezüglich dem Empfang einer Nachricht ausschließlich auf der Distanz zwischen ihm und dem Empfänger der Nachricht.
+Hierbei zieht der Sender Rückschlüsse auf den Empfang einer Nachricht ausschließlich aus der Distanz zwischen ihm und dem Empfänger.
 Manche Protokolle kommen vollkommen ohne \textit{Acknowledgements} aus und werden unter \textit{NA} zusammengefasst\cite{conti2013mobile}.
 
 \subsection{Start des Prozesses zur Weiterleitung von Nachrichten}\label{subsec:forwarder-selection}
 Ein Fahrzeug kann sich in zwei verschiedenen Zuständen befinden.
-Im \textit{idle} Zustand senden das Fahrzeug keine Nachrichten.
-Dies kann entweder eintreten, falls keine Nachrichten empfangen wurden und somit auch keine weitergeleitet werden können, oder aber durch die Information das alle direkten Nachbarn des Fahrzeugs alle empfangenen Nachrichten bereits erhalten haben.
+Im \textit{idle} Zustand senden die Fahrzeuge keine Nachrichten.
+Dies kann entweder eintreten, falls keine Nachrichten empfangen wurden und somit auch keine weitergeleitet werden können oder aber durch die Information, dass alle direkten Nachbarn des Fahrzeugs alle empfangenen Nachrichten bereits erhalten haben.
 Befindet sich ein Fahrzeug allerdings im aktiven Zustand (\textit{active}), so können Nachrichten weitergeleitet werden.
 Ebenfalls müssen dann diejenigen Nachbarn ausgewählt werden, welche die Nachricht weiter verbreiten sollen.
 Für die Entscheidung, wann ein Fahrzeug vom \textit{idle} in den \textit{active} Zustand wechselt, gibt es mehrere Möglichkeiten, die sich allerdings gegenseitig nicht ausschließen und in manchen Protokollen miteinander kombiniert werden.
@@ -495,8 +495,8 @@ Ein anderes Fahrzeug $L$ gilt genau dann als von $N$ abgedeckt, falls sich diese
 Hat ein Fahrzeug wie in \ref{subsec:forwarder-selection} beschrieben, den aktiven Zustand eingenommen, kann es – muss aber nicht zwingend – Nachrichten weiterverbreiten.
 Da die Kommunikation über einem einzigen Kanal läuft, können nicht zwei Knoten gleichzeitig senden, da es sonst zu Kollisionen kommen könnte.
 Bedingt dadurch kommt es im Normalfall zu einer Art Wettbewerb zwischen den Fahrzeugen, bei der der Gewinner die Möglichkeit erhält Nachrichten zu versenden.
-Die \textit{medium access control (MAC)}, eine Erweiterung der OSI-Modells, ermöglicht es allerdings Fahrzeugen in kurzen zeitlichen Abständen voneinander zu senden, indem andere Fahrzeuge jeweils auf die Ankunft und damit den Abschluss einer Übertragung warten.
-Somit erübrigt sich der Wettbewerb durch die Nutzung der MAC-Schicht, wodurch Protokolle die nur diese Nutzen der Kategorie \textit{NC} bzw. \textit{no competition} angehören.\\
+Die \textit{medium access control (MAC)}, eine Erweiterung des OSI-Modells, ermöglicht es allerdings Fahrzeugen in kurzen zeitlichen Abständen voneinander zu senden, indem andere Fahrzeuge jeweils auf die Ankunft und damit den Abschluss einer Übertragung warten.
+Somit erübrigt sich der Wettbewerb durch die Nutzung der MAC-Schicht, wodurch Protokolle die nur diese nutzen der Kategorie \textit{NC} bzw. \textit{no competition} angehören.\\
 Bei der Nutzung von \textit{DSRC} werden, angelehnt an IEEE 802.11, Zeitslots genutzt, um Kollisionen möglichst zu vermeiden.
 Ein Fahrzeug kann senden, wenn sich eine festgelegte Anzahl an freien Zeitslots ergibt.
 Dabei kann sich die Wartezeit entweder zufällig ergeben, oder anhand von Prioritäten vergeben werden.
@@ -507,7 +507,7 @@ Dabei wird zwischen Sender und Empfänger ein Kanal reserviert, indem der Sender
 Erhält der Sender diese Bestätigung, kann er den Kanal sicher kollisionsfrei für den vorgesehenen Zeitraum nutzen.
 Bei \textit{RTS-CTS} können ausschließlich Kollisionen beim Senden der RTS- bzw. CTS-Pakete vorkommen, welche in diesem Fall mit zufälliger Wartezeit erneut gesendet werden können.
 \textit{Ready-to-Send Clear-to-Send} ist ein Protokoll welches der Kategorie \textit{time delay} (\textit{TD}) angehört.\\
-Mit \textit{black burst} (\textit{BB}) existiert eine weitere Option bei der Knoten die eine Nachricht senden wollen ein Rauschsignal ausgeben und erst dann die Nachricht senden, wenn sie kein Rauschsignal von anderen Knoten empfangen\cite{conti2013mobile}.
+Mit \textit{black burst} (\textit{BB}) existiert eine weitere Option bei der Knoten, die eine Nachricht senden wollen ein Rauschsignal ausgeben und erst dann die Nachricht senden, wenn sie kein Rauschsignal von anderen Knoten empfangen\cite{conti2013mobile}.
 
 \subsection{Konnektivität}
 Der temporäre Verlust der Verbindung zwischen Fahrzeugen oder RSUs stellt für manche Kommunikationsprotokolle ein Problem dar, da diese auf der Annahme einer ständigen Verbindung aufbauen.
@@ -527,10 +527,10 @@ Hierbei liegt der Fokus darauf, dass alle Fahrzeuge, welche die Nachricht bekomm
 Ein Beispiel hierfür ist das Erhalten einer Werbung für eine Tankstelle in einem bestimmten Umkreis von dieser\cite{conti2013mobile}.
 
 \subsection{Nachrichten}
-Für Weiterleitung von Nachrichten in einem VANET enthalten diese neben dem eigentlichen Informationsgehalt zusätzliche Informationen.
-Algorithmen zur Weiterleitung von jenen Nachrichten treffen unterschiedliche Annahmen welche solcher Informationen enthalten sind.
+Für die Weiterleitung von Nachrichten in einem VANET enthalten diese neben dem eigentlichen Informationsgehalt zusätzliche Informationen.
+Algorithmen zur Weiterleitung von jenen Nachrichten, treffen unterschiedliche Annahmen welche solcher Informationen in einer Nachricht enthalten sind.
 Hierbei wird hauptsächlich zwischen zwei Kategorien von Nachrichten unterschieden.
-Eine sogenannte \textit{vollständige Nachricht} (\textit{FM} von engl. \textit{full message}) kann Informationen wie Versender, dessen Geschwindigkeit und Position, so wie den genauen Empfänger enthalten.
+Eine sogenannte \textit{vollständige Nachricht} (\textit{FM} von engl. \textit{full message}) kann Informationen wie Versender, dessen Geschwindigkeit und Position, sowie den genauen Empfänger enthalten.
 Im Gegensatz dazu stehen Nachrichten, bei denen die Knoten, welche die Nachricht weiterleiten sollen, in der Nachricht enthalten sind.
 Diese Nachrichten werden unter \textit{forwarder attached} (\textit{FA}) zusammengefasst.
 Algorithmen die auf \textit{FA} basieren gelten als \textit{Sender orientiert}, da jeweils der Sender der Nachricht darüber entscheidet, welcher Empfänger-Knoten die Nachricht weiterleitet.
@@ -542,14 +542,14 @@ Umgekehrt gelten die auf \textit{FM} basierenden Algorithmen als \textit{Empfän
 \section{Kommunikationsprotokolle für VANETs}
 \label{sec:protocols}
 Im Folgenden soll näher auf einzelne VANET-Kommunikationsprotokolle eingegangen werden und diese im Hinblick auf die vorgestellte Taxonomie eingeordnet werden.
-Hierbei wird die Funktionsweise für ein Protokoll im Detail beschrieben sowie der mögliche Anwendungsbereich des Protokolls.
+Hierbei wird die Funktionsweise für ein Protokoll im Detail beschrieben sowie dessen möglicher Anwendungsbereich.
 Zudem sollen mögliche Schwachstellen der einzelnen Protokolle aufgezeigt werden und ein beispielhafter Kommunikationsablauf beschrieben werden.
 Abschließend findet sich eine tabellarische Übersicht der Protokolle im Bezug auf die Taxonomie\cite{conti2013mobile}.
 
 \subsection{Zuverlässiges und effizientes Broadcasting in VANETs (ackPBSM)}
 Bei \textit{ackPBSM} (von engl. \textit{parameterless reliable broadcasting strategy with acknowledgement}) handelt es sich um eine zuverlässige Strategie für Broadcasts welche keine Parameter nutzt und \textit{Acknowledgements} zur Bestätigung von Nachrichten nutzt.
-Ziel des Protokolls sind eine hohe Zuverlässigkeit beim Versenden von Nachrichten sowie die Reduzierung der benötigten Nachrichten zum Weiterverbreiten der Nachricht.
-Dabei ist \textit{ackPBSM} unabhängig vom Straßen-Szenario aus \ref{subsec:strassen-szenario} und funktioniert sowohl für \textit{eindimensionale} als auch für \textit{zweidimensionale} Szenarios.
+Ziele des Protokolls sind eine hohe Zuverlässigkeit beim Versenden von Nachrichten sowie die Reduzierung der benötigten Nachrichten zum Weiterverbreiten der Nachricht.
+Dabei ist \textit{ackPBSM} unabhängig vom Straßen-Szenario, beschrieben in \ref{subsec:strassen-szenario} und funktioniert somit sowohl für \textit{eindimensionale} als auch für \textit{zweidimensionale} Szenarios.
 Das Protokoll nutzt \textit{beacon acknowledgements} (\textit{BA}) um Informationen über andere Fahrzeuge zu gewinnen, welche die Postion des Senders sowie Bestätigungen von erhaltenen Nachrichten enthalten.
 Um insgesamt möglichst wenige Nachrichten für einen Broadcast zu benötigen wird ein \textit{minimaler Spannbaum} erzeugt.
 Dies geschieht, indem jedes Fahrzeug periodisch eine Art Start-Nachricht versendet (oder ein \textit{beacon}) woraus daraufhin ohne weiteren Overhead eine \textit{untereinander verbundene dominierende Menge} (\textit{CDS} von engl. \textit{connected dominating set}) erzeugt werden kann.
@@ -557,7 +557,7 @@ Eine \textit{untereinander verbundene dominierende Menge} enthält eine minimale
 Zudem müssen alle Knoten, die Teil des \textit{CDS} sind, untereinander ebenfalls verbunden sein.
 Dies stellt unter anderem sicher, dass nach einer Nachricht von einem beliebigen Knoten $V$ sich diese im ganzen Netz verbreitet wenn nur Knoten des \textit{CDS} die Nachricht an alle Nachbarn verbreiten.
 Die Nachricht erreicht sicher das \textit{CDS}, da $V$ entweder selbst Teil des \textit{CDS} sein muss oder mindesten einen Nachbarn besitzen muss der diese Eigenschaft erfüllt.
-Durch die Nutzung einer \textit{untereinander verbundenen dominierenden Menge} lassen sich Kollisionen von Nachrichten reduzieren, da insgesamt weniger Nachricht versendet werden müssen für einen Broadcast.
+Durch die Nutzung einer \textit{untereinander verbundenen dominierenden Menge} lassen sich Kollisionen von Nachrichten reduzieren, da insgesamt weniger Nachrichten für einen Broadcast versendet werden müssen.
 Dies ist besonders nützlich in dichten Netzwerken die sich besonders in Staus oder beim Warten vor einer Ampel bilden.
 Es ist zu beachten, dass alle Knoten im Netz zusammen auch ein \textit{CDS} ergeben und die \textit{untereinander verbundene dominierende Menge} zur optimalen Nutzung möglichst minimal sein sollte\cite{conti2013mobile}.\\
 Bei der Nutzung von \textit{ackPBSM} besitzt jedes Fahrzeug $C$ zwei Listen:
@@ -565,9 +565,9 @@ Bei der Nutzung von \textit{ackPBSM} besitzt jedes Fahrzeug $C$ zwei Listen:
   \item \textit{R} enthält diejenigen Nachbarn, von denen $C$ annimmt, dass sie die Nachricht erhalten haben.
   \item \textit{N} enthält alle anderen direkten Nachbarn von $C$.
 \end{itemize}
-Fall $C$ eine Nachricht zum wiederholten mal empfängt, werden alle Fahrzeuge welche aufgrund ihrer aktuellen Position die Nachricht ebenfalls erhalten haben sollten, zu \textit{R} hinzugefügt.
+Fall $C$ eine Nachricht zum wiederholten Mal empfängt, werden alle Fahrzeuge welche aufgrund ihrer aktuellen Position die Nachricht ebenfalls erhalten haben sollten, zu \textit{R} hinzugefügt.
 Die Zeit in der entschieden wird, ob eine Nachricht von einem Knoten im \textit{CDS} weiterverbreitet wird, ist antiproportional zur Anzahl von Knoten in \textit{N}.
-Das bedeutet je mehr direkte Nachbarn eines Knotens $C$ eine Nachricht vermutlich nicht erhalten haben, desto kürzer ist die Wartezeit bis zum weiterbreiten der Nachricht von $C$.
+Das bedeutet je mehr direkte Nachbarn eines Knotens $C$ eine Nachricht vermutlich nicht erhalten haben, desto kürzer ist die Wartezeit bis zum Weiterbreiten der Nachricht von $C$.
 Knoten welche sich nicht im \textit{CDS} befinden, besitzen allgemein eine längere Wartezeit.
 Bei \textit{ackPBSM} wird \textit{neighbor elimination (NE)} genutzt, da Fahrzeuge eine Nachricht nur dann weiterverbreitet wird, wenn sich mindestens ein Fahrzeug in der Liste \textit{N} befindet.
 Befindet sich nun mindesten ein Fahrzeug in \textit{N} wird die Nachricht versendet und alle Nachbarn werden in \textit{R} verschoben.
@@ -585,17 +585,17 @@ Um einen detaillierteren Einblick in das Protokoll zu bieten, wird in \ref{fig:a
 
 Bevor Fahrzeug $A$ seinen Broadcast startet, wird das \textit{CDS} gebildet.
 Dabei gehören im Beispiel die Fahrzeuge $C$, $E$, $F$ und $I$ (markiert in rot) zum \textit{CDS}.
-$A$ versendet die Nachricht an alle Fahrzeuge in seiner unmittelbaren Umgebung ($B$ und $C$), wobei $B$ die Nachricht nicht direkt weiterverbreitet und im aktiven Zustand verweilt, da $B$ davon ausgeht, dass $C$, aufgrund seiner Position, die Nachricht aufgrund ebenfalls erhalten hat.
+$A$ versendet die Nachricht an alle Fahrzeuge in seiner unmittelbaren Umgebung ($B$ und $C$), wobei $B$ die Nachricht nicht direkt weiterverbreitet und im aktiven Zustand verweilt, da $B$ davon ausgeht, dass $C$, aufgrund seiner Position, die Nachricht ebenfalls erhalten hat.
 $C$ hingegen besitzt einen Nachbarn ($D$) der die Nachricht vermutlich nicht erhalten hat (\textit{NE}) und verbreitet die Nachricht somit weiter.
 Da $B$ nun die Nachricht erneut erhält, wird der aktive Zustand verlassen und die Weiterverbreitung gestoppt.
 Außerdem erhalten neben $B$ auch $D$, $E$ und $F$ die Nachricht.
-Da $E$ und $F$ Teil des \textit{CDS} sind, kommen diese für die Weiterverbreitung zuerst in Frage, wobei $F$ zuerst sendet da die Wartezeit antiproportional zu der Anzahl an Nachbarn ist, welche die Nachricht noch nicht erhalten haben ($H$ und $G$).
-Wenn $F$ nun die Nachricht weiterleitet, verlassen $E$ und $D$ den aktiven Zustand da sie die Nachricht zum wiederholten Male (nun von $F$) empfangen.
+Da $E$ und $F$ Teil des \textit{CDS} sind, kommen diese für die Weiterverbreitung zuerst in Frage, wobei $F$ zuerst sendet, da die Wartezeit antiproportional zu der Anzahl an Nachbarn ist, welche die Nachricht noch nicht erhalten haben ($H$ und $G$).
+Wenn $F$ nun die Nachricht weiterleitet, verlassen $E$ und $D$ den aktiven Zustand, da sie die Nachricht zum wiederholten Male (nun von $F$) empfangen.
 Da $I$ nicht in Reichweite eines Fahrzeugs ist, kann es die Nachricht erst erhalten wenn zum Beispiel $H$ weiter fährt und sich somit $I$ annähert.
 Durch einen \textit{beacon} von $I$ erhält $H$ dann die Information, dass $I$ die Nachricht noch nicht erhalten (\textit{LA}) hat und kann diese, da sie zwischengespeichert wurde, (\textit{IC}) erneut senden.
 Durch die Bestätigungen über den Empfang der Nachricht ist \textit{ackPBSM} sehr zuverlässig, da im Falle eines Nicht-Erhalten die Nachricht einfach erneut gesendet werden kann.
 Zudem werden auch im Falle von Überholmanövern, wodurch neue Nachbarn aufkommen, welche die Nachricht allerdings schon kennen, keine zusätzlichen versendet, da mit den \textit{beacon} der Empfang bestätigt wird und somit direkt Informationen über alle erhaltenen Nachrichten von neuen Nachbarn erhalten werden.\\
-Ein Nachteile von \textit{ackPBSM} ergibt sich aus dem Overhead der durch die stets gesendeten Bestätigungen, die weitere Daten mit sich führen, entsteht.
+Ein Nachteil von \textit{ackPBSM} ergibt sich aus dem Overhead, der durch die stets gesendeten Bestätigungen, die weitere Daten mit sich führen, entsteht.
 Für eine zeitkritische Nutzung des Protokolls müsste die Funktion für die zeitliche Verzögerung beim Weiterverbreiten einer Nachricht genauer spezifiziert werden\cite{conti2013mobile}.
 
 \subsection{Static-Node-Assisted Adaptive Routing Protocol in VANETs (SADV)}
@@ -603,9 +603,9 @@ Um Nachrichten trotz temporärer Verluste \textit{(IC)} der Verbindung von Fahrz
 \textit{SADV} transportiert Nachrichten auch über Kreuzungen und wurde für ein \textit{zweidimensionales} Szenario konstruiert.
 Eine wichtige Rolle für eine reale Anwendung von \textit{SADV} spielt die Reduzierung des exponentiellen Overhead, der durch das Weiterleiten an alle benachbarten RSUs und das temporäre Zwischenspeichern der Nachrichten entsteht.
 Hierzu werden doppelte Nachrichten sofort gelöscht und das Weiterleiten an alle benachbarten RSUs wird auf Kreuzungen beschränkt.
-Um beim Übertragung eine möglichst geringe zeitliche Verzögerung zu haben, werden ständig die einzelnen Übertragungszeiten mit Hilfe von Echtzeit-Daten zwischen den einzelnen Knoten berechnet um so die Übertragung mit geringst möglicher Verzögerung durchführen zu können.
+Um beim Übertragung eine möglichst geringe zeitliche Verzögerung zu haben, werden ständig die einzelnen Übertragungszeiten mit Hilfe von Echtzeit-Daten zwischen den einzelnen Knoten berechnet, um so die Übertragung mit geringst möglicher Verzögerung durchführen zu können.
 Ein wichtiger und vermutlich entscheidender Faktor bei der realen Nutzbarkeit des Protokolls spielen die stationären RSUs\cite{conti2013mobile}.
-Diese sind bisher kaum vorhanden, wären sehr kostspielig in der Aufstellung sowie der Beschaffung und machen einen Einsatz von \textit{SADV} in naher Zukunft eher unwahrscheinlich.
+Diese sind bisher kaum vorhanden und wären sehr kostspielig in der Aufstellung sowie der Beschaffung und machen folglich einen Einsatz von \textit{SADV} in naher Zukunft eher unwahrscheinlich.
 
 \section{Zusammenfassung und Fazit}
 \label{sec:conclusion}
